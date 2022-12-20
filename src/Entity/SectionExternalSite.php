@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\SectionExternalSiteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,9 +35,19 @@ class SectionExternalSite
     private $color_name_link;
 
     /**
+     * @ORM\OneToMany(targetEntity=ExternalSite::class, mappedBy="section_external_site")
+     */
+    private $externalSites;
+
+    /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionExternalSites")
      */
     private $customer;
+
+    public function __construct()
+    {
+        $this->externalSites = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -74,6 +86,36 @@ class SectionExternalSite
     public function setColorNameLink(?string $color_name_link): self
     {
         $this->color_name_link = $color_name_link;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, ExternalSite>
+     */
+    public function getExternalSites(): Collection
+    {
+        return $this->externalSites;
+    }
+
+    public function addExternalSite(ExternalSite $externalSite): self
+    {
+        if (!$this->externalSites->contains($externalSite)) {
+            $this->externalSites[] = $externalSite;
+            $externalSite->setSectionExternalSite($this);
+        }
+
+        return $this;
+    }
+
+    public function removeExternalSite(ExternalSite $externalSite): self
+    {
+        if ($this->externalSites->removeElement($externalSite)) {
+            // set the owning side to null (unless already changed)
+            if ($externalSite->getSectionExternalSite() === $this) {
+                $externalSite->setSectionExternalSite(null);
+            }
+        }
 
         return $this;
     }

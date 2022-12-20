@@ -30,23 +30,17 @@ class SectionSocialNetwork
     private $color_icons;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionSocialNetworks")
-     */
-    private $customer;
-
-    /**
-     * @ORM\OneToMany(targetEntity=ExternalSite::class, mappedBy="sectionSocialNetwork")
-     */
-    private $externalSites;
-
-    /**
      * @ORM\OneToMany(targetEntity=SocialNetwork::class, mappedBy="sectionSocialNetwork")
      */
     private $socialNetworks;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionSocialNetworks")
+     */
+    private $customer;
+
     public function __construct()
     {
-        $this->externalSites = new ArrayCollection();
         $this->socialNetworks = new ArrayCollection();
     }
 
@@ -79,48 +73,6 @@ class SectionSocialNetwork
         return $this;
     }
 
-    public function getCustomer(): ?User
-    {
-        return $this->customer;
-    }
-
-    public function setCustomer(?User $customer): self
-    {
-        $this->customer = $customer;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, ExternalSite>
-     */
-    public function getExternalSites(): Collection
-    {
-        return $this->externalSites;
-    }
-
-    public function addExternalSite(ExternalSite $externalSite): self
-    {
-        if (!$this->externalSites->contains($externalSite)) {
-            $this->externalSites[] = $externalSite;
-            $externalSite->setSectionSocialNetwork($this);
-        }
-
-        return $this;
-    }
-
-    public function removeExternalSite(ExternalSite $externalSite): self
-    {
-        if ($this->externalSites->removeElement($externalSite)) {
-            // set the owning side to null (unless already changed)
-            if ($externalSite->getSectionSocialNetwork() === $this) {
-                $externalSite->setSectionSocialNetwork(null);
-            }
-        }
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, SocialNetwork>
      */
@@ -147,6 +99,18 @@ class SectionSocialNetwork
                 $socialNetwork->setSectionSocialNetwork(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCustomer(): ?User
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?User $customer): self
+    {
+        $this->customer = $customer;
 
         return $this;
     }

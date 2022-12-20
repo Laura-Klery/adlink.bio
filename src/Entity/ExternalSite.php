@@ -28,9 +28,9 @@ class ExternalSite
     private $link;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SectionSocialNetwork::class, inversedBy="externalSites")
+     * @ORM\ManyToOne(targetEntity=SectionExternalSite::class, inversedBy="externalSites")
      */
-    private $sectionSocialNetwork;
+    private $section_external_site;
 
     public function getId(): ?int
     {
@@ -61,14 +61,14 @@ class ExternalSite
         return $this;
     }
 
-    public function getSectionSocialNetwork(): ?SectionSocialNetwork
+    public function getSectionExternalSite(): ?SectionExternalSite
     {
-        return $this->sectionSocialNetwork;
+        return $this->section_external_site;
     }
 
-    public function setSectionSocialNetwork(?SectionSocialNetwork $sectionSocialNetwork): self
+    public function setSectionExternalSite(?SectionExternalSite $section_external_site): self
     {
-        $this->sectionSocialNetwork = $sectionSocialNetwork;
+        $this->section_external_site = $section_external_site;
 
         return $this;
     }

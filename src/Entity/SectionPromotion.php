@@ -45,14 +45,14 @@ class SectionPromotion
     private $background_description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionPromotions")
-     */
-    private $customer;
-
-    /**
      * @ORM\OneToMany(targetEntity=Promotion::class, mappedBy="sectionPromotion")
      */
     private $promotions;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionPromotions")
+     */
+    private $customer;
 
     public function __construct()
     {
@@ -124,18 +124,6 @@ class SectionPromotion
         return $this;
     }
 
-    public function getCustomer(): ?User
-    {
-        return $this->customer;
-    }
-
-    public function setCustomer(?User $customer): self
-    {
-        $this->customer = $customer;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Promotion>
      */
@@ -162,6 +150,18 @@ class SectionPromotion
                 $promotion->setSectionPromotion(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCustomer(): ?User
+    {
+        return $this->customer;
+    }
+
+    public function setCustomer(?User $customer): self
+    {
+        $this->customer = $customer;
 
         return $this;
     }
