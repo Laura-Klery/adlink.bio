@@ -1,15 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AppController!{% endblock %}
+{% block title %}Accueil - {{parent()}} {% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Hello! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Symfony/adlink/src/Controller/AppController.php'|file_link(0) }}">src/Controller/AppController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Symfony/adlink/templates/app/index.html.twig'|file_link(0) }}">templates/app/index.html.twig</a></code></li>
-    </ul>
+<div class="home_banner">
+    <h1>All Dev Long</h1>
+    <h2>Agence de développment web </h2>
+    <button type="button">Contactez-nous</button>
 </div>
+<div class="About" style="display: flex"> 
+<div class="col-1">
+<h2>A propos</h2>
+<p> All Dev Long est depuis 2015 une agence de développement web située à Bordeaux. Nous accompagnons dans toute la France, les entreprises dans tous leurs projets de développement que ce soit pour des sites web ou logiciels. Notre équipe de développeurs professionnels, vous propose des services de qualité grâce à leur grande expérience. Si vous avez des questions ou souhaitez en savoir plus, n'hésitez pas à nous contacter ! </p>
+</div>
+<img class="col-2" src="{{ asset('/pictures/About_1.jpg') }}" alt="All Dev Long About">
+<img class="col-3" src="{{ asset('/pictures/About_2.jpg') }}" alt="All Dev Long About">
+</div>
+<div>
+<h2>Notre équipe </h2>
+<div class="team">
+    <div class= "team_1">
+    <img class= "team_img"  src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Jonathan Warner Commercial" >
+    Jonathan Warner Commercial </div>
+     <div class= "team_2">
+    <img class= "team_img"  src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Tammy Johnson CEO "> Tammy Johnson CEO </div>
+    <div class= "team_3">
+    <img class= "team_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur"> David Hackett Développeur </div>
+    <div class= "team_4">
+    <img class= "team_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Pamela Wagner Lead Developpeur"> Pamela Wagner Lead Developpeur </div>
+</div>
+
+</div>
+
 {% endblock %}
