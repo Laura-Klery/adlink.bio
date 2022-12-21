@@ -140,4 +140,6 @@ class SectionBrand
 
         return $this;
     }
+
+    public function __toString() { return $this->brand_name; }
 }
