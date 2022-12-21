@@ -14,14 +14,16 @@ class DashboardUserController extends AbstractController
      */
     public function index(): Response
     {
-        $form = $this->createForm(InformationFormType::class);
+        $informationsAccount = $this->createForm(InformationFormType::class);
+        
         return $this->render('dashboard_user/index.html.twig', [
-            'form' => $form->createView()
+            'account' => $informationsAccount->createView(),
+
         ]);
     }
 
     /**
-     * @Route("/{dashboard_user}", name="landing_page")
+     * @Route("/dashboard_user/{pseudo}", name="landing_page")
      */
     public function landingPage(): Response
     {
