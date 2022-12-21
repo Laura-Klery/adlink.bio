@@ -1,0 +1,61 @@
+$primary-color: #575756;
+$secondary-color: #DADADA;
+$tertiary-color: #61A8DD;
+body {
+    background-color: #DADADA;
+}
+h2 {
+    text-align: center;
+}
+/* BANNER */
+.home_banner {
+    background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 30em;
+    padding: 3em;
+
+   
+    button{
+        background-color: $primary-color;
+        border-radius: 5px;
+        padding: 0.5em;
+        color: white;
+        border: 1px solid $tertiary-color;
+
+    }
+}
+
+/*ABOUT*/
+.about {
+    display: flex!important;
+    float: left;
+}
+
+.col-1 {
+   width: 50%;
+   padding: 3em;
+}
+.col-2 {
+    width: 25%;
+   padding: 3em 0.5em 3em 3em;
+
+}
+.col-3 {
+    width: 25%;
+   padding: 3em 3em 3em 0.5em;
+
+}
+/*TEAM*/
+.team {
+    display: flex;
+}
+.team_1, .team_2, .team_3, .team_4{
+    width: 24%;
+}
+.team_img {
+    width: 100%;
+    border-radius: 150px;
+}
