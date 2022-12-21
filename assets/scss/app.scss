@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
+
+$primary-color: #575756;
+$secondary-color: #DADADA;
+$terciary-color: #61A8DD;
+p {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+/* HEADER*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: transparent;
+    color: $primary-color;
+    position: relative;
+    font-family: 'Bitter', serif;
+}
+.navbar a {
+    font-size: 0.8em;
+}
+ul {
+    list-style-type: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color:#575756
+    
+}
+
+.menu {
+    display: flex;
+    gap: 1em;
+    font-size: 18px; 
+    position: relative;
+}
+    
+.menu li:active {
+    border-bottom: 2px solid $terciary-color;
+    transition: 0.3s ease;
+}
+    
+.menu li {
+    padding: 5px 30px;
+    display: inline;
+    vertical-align: baseline;
+}
+.connexion_btn {
+    background-color: #575756;
+    border: 1px solid $terciary-color;
+    border-radius: 5px;
+    a{
+        color:white;
+    }
+}
+
+/* FOOTER */
+.footer_top {
+    width: 100%;
+    display: inline-block;
+    background: #747474;
+    padding: 1em;
+h4 {
+    font-size: 1.5em;
+    color: #61A8DD;
+    padding-top: 0.5em;
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+}
+}
+.footer_left .footer_right {
+    display: inline-block;
+	vertical-align: top;
+}
+.footer_left{
+    float: left;
+}
+.footer_right {
+    text-align: center;
+    vertical-align: center;
+    float: right;
+    border-left: 1px solid $terciary-color;
+    width: 50%;
+}
+.fa-brands {
+    padding: 1em 3em 1em 0em;
+    color: #61A8DD;
+}
+.footer__legal {
+    display: flex;
+    align-items: center;
+    background-color: #DADADA;
+    color: #575756;
+    padding: 1em 1.5em;
+    margin-top: -0.3em;
+}
+.footer_link { 
+    width: 50%;
+    text-align: right;
+}
+.footer_link_2 { 
+    width: 50%;
+    text-align: left;
+}

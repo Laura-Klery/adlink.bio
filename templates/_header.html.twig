@@ -1,8 +1,8 @@
 <header class="">
-    <div class="">
-        <a href="{{ path('home') }}" class=""><img style="width:20px;height:20px;" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="logo all dev long"></a>
-        <nav class="">
-            <ul>
+    <div class="navbar">
+        <a href="{{ path('home') }}" class=""><img style="width:50px;height:50px;" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="logo all dev long"></a>
+        <nav class="menu">
+             <ul class="nav-links">
                 <li>
                     <a href="{{ path('home') }}" class="">Accueil</a>
                 </li>
@@ -12,8 +12,8 @@
                 <li>
                     <a href="{{ path('contact') }}" class="">Contact</a>
                 </li>
-                <li>
-                    <a href="{{ path('connexion') }}" class="">Connexion</a>
+                <li class="connexion_btn">
+                    <a href="{{ path('login') }}" class="">Connexion</a>
                 </li>
             </ul>
         </nav>
