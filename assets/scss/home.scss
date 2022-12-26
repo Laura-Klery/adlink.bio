@@ -7,6 +7,10 @@ body {
 h2 {
     text-align: center;
 }
+hr {
+    background-color: #61A8DD;
+    border-top: 2px solid #61A8DD;
+}
 /* BANNER */
 .home_banner {
     background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg");
@@ -58,4 +62,14 @@ h2 {
 .team_img {
     width: 100%;
     border-radius: 150px;
+}
+/* SERVICES*/
+.services .services_card {
+    width: 10%;
+}
+.services_img {
+    width: 50%;
+}
+.services h3, p  {
+    text-align: center;
 }
