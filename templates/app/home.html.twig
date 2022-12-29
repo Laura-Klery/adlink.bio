@@ -4,9 +4,10 @@
 
 {% block body %}
 <div class="home_banner">
+    <img class="logo_banner" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="All Dev Long About">
     <h1>All Dev Long</h1>
     <h2>Agence de développment web </h2>
-    <button type="button">Contactez-nous</button>
+    <button class= "btn" type="button">Contactez-nous</button>
 </div>
 <div class="About" style="display: flex"> 
 <div class="col-1">
@@ -21,49 +22,49 @@
     <h2>Notre équipe </h2>
     <hr></hr>
 <div class="team">
-    <div class= "team_1">
-        <img class= "team_img"  src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Jonathan Warner Commercial" >
-    Jonathan Warner Commercial </div>
-     <div class= "team_2">
-    <img class= "team_img"  src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Tammy Johnson CEO "> Tammy Johnson CEO </div>
-    <div class= "team_3">
-        <img class= "team_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur"> David Hackett Développeur </div>
-    <div class= "team_4">
-        <img class= "team_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "Pamela Wagner Lead Developpeur"> Pamela Wagner Lead Developpeur </div>
+    <div class= "team_card">
+        <img class= "team_img"  src= "{{ asset('/pictures/equipe_1.png') }}" alt= "Jonathan Warner Commercial" > <br>Jonathan Warner <br> <strong> Commercial </strong></div>
+     <div class= "team_card">
+    <img class= "team_img"  src= "{{ asset('/pictures/equipe_2.png') }}" alt= "Tammy Johnson CEO "> <br> Tammy Johnson <br> <strong>CEO</strong> </div>
+    <div class= "team_card">
+        <img class= "team_img" src= "{{ asset('/pictures/equipe_3.png') }}" alt= "David Hackett Développeur"> <br> David Hackett <br> <strong>Développeur</strong> </div>
+    <div class= "team_card">
+        <img class= "team_img" src= "{{ asset('/pictures/equipe_4.png') }}" alt= "Pamela Wagner Lead Developpeur"> <br> Pamela Wagner <br> <strong>Lead Developpeur</strong> </div>
 </div>
 <div>
     <h2>Nos services </h2>
+    <hr ></hr>
     <div class= "services">
-    <hr></hr>
         <div class= "services_card">
-        <img class= "services_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur"> 
+        <img class= "services_img" src= "{{ asset('/pictures/service_1.png') }}" alt= "David Hackett Développeur"> 
             <h3> Création de site vitrine </h3>
             <p> Un site vitrine vous permet de présenter votre entreprise en détails</p>
         </div>
         <div class= "services_card">
-        <img class= "services_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur">
+        <img class= "services_img" src= "{{ asset('/pictures/service_2.png') }}" alt= "David Hackett Développeur">
             <h3> Création de site de e-commerce</h3>
             <p> Un site de e-commerce est une boutique en ligne qui contient un système de vente et de paiement de vos produits ou services.</p>
         </div>
         <div class= "services_card">
-        <img class= "services_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur"> 
+        <img class= "services_img" src= "{{ asset('/pictures/service_3.png') }}" alt= "David Hackett Développeur"> 
             <h3>Création de site catalogue</h3>
             <p>Le site catalogue est un site vitrine qui présente vos produits sans espace de paiement. </p>
         </div>
         <div class= "services_card">
-        <img class= "services_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur"> 
+        <img class= "services_img" src= "{{ asset('/pictures/service_4.png') }}" alt= "David Hackett Développeur"> 
             <h3>Création de logiciel</h3>
             <p>All Dev Long propose aux entreprises la création de logiciel personnalisé. Pour plus d'informations, n'hésitez pas à nous contacter </p>
         </div>
         <div class= "services_card">
-        <img class= "services_img" src= "{{ asset('/pictures/About_1.jpg') }}" alt= "David Hackett Développeur">
+        <img class= "services_img" src= "{{ asset('/pictures/service_5.png') }}" alt= "David Hackett Développeur">
             <h3>Réferencement SEO</h3>
             <p> Dans le cadre de la création de site web, nous proposons de référencer votre site pour qu'il apparaisse dans les première recherche Google</p>
         </div>
-    <button type="button">En savoir plus</button>
+        <br>
 
     </div>
-
+    <button class="btn" type="button">En savoir plus</button>
+    <br>
 </div>
 
 {% endblock %}

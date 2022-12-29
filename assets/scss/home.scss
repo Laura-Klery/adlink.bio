@@ -3,15 +3,33 @@ $secondary-color: #DADADA;
 $tertiary-color: #61A8DD;
 body {
     background-color: #DADADA;
+
 }
 h2 {
     text-align: center;
+    
 }
 hr {
     background-color: #61A8DD;
     border-top: 2px solid #61A8DD;
+    margin: 1em;
+    width: 40%; 
+    margin-left: 30% !important; 
+    margin-right: 30% !important;
+}
+.btn{
+    background-color: $primary-color;
+    border-radius: 5px;
+    padding: 0.5em;
+    color: white;
+    border: 1px solid $tertiary-color;
+
 }
 /* BANNER */
+.logo_banner {
+    width: 200px;
+
+}
 .home_banner {
     background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg");
     background-position: center;
@@ -19,28 +37,22 @@ hr {
     background-size: cover;
     position: relative;
     height: 30em;
-    padding: 3em;
-
-   
-    button{
-        background-color: $primary-color;
-        border-radius: 5px;
-        padding: 0.5em;
-        color: white;
-        border: 1px solid $tertiary-color;
-
-    }
+    padding: 3em; 
 }
 
 /*ABOUT*/
-.about {
+.About {
     display: flex!important;
     float: left;
+    padding: 2em;
 }
 
 .col-1 {
    width: 50%;
    padding: 3em;
+}
+.col-1 p {
+    padding: 1em 0;
 }
 .col-2 {
     width: 25%;
@@ -54,22 +66,118 @@ hr {
 }
 /*TEAM*/
 .team {
-    display: flex;
+    display: grid;
+    grid: auto / auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    justify-content: center;
 }
-.team_1, .team_2, .team_3, .team_4{
-    width: 24%;
+
+.team_img{
+    width: 15em;
 }
-.team_img {
-    width: 100%;
-    border-radius: 150px;
+
+.team_card {
+    text-align: center;
+    padding: 3em;
 }
 /* SERVICES*/
-.services .services_card {
-    width: 10%;
+.services  {
+    display: grid;
+    grid: auto / auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+.services_card {
+    text-align: center;
+    padding: 2em;
 }
 .services_img {
-    width: 50%;
+    width: 15em;
 }
 .services h3, p  {
     text-align: center;
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 1700px) {
+    .services {
+        display: grid;
+        grid: auto / auto auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center; 
+    }
+    .services_img {
+        width: 20em;
+    }
+} 
+@media screen and (max-width: 1530px) {
+    .services {
+        display: grid;
+        grid: auto / auto auto auto;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center; 
+    }
+    .services_img {
+        width: 20em;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .team {
+        display: grid;
+        grid: auto / auto;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .team_img {
+        width: 15em;
+    }
+    .services {
+        display: grid;
+        grid: auto / auto ;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center; 
+    }
+    .services_img {
+        width: 15em;
+    }
+    
+}
+/*@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 992px) {
+} */
+
+/*@media screen and (max-width: 580px) {
+    .team {
+        display: grid;
+        grid: auto / auto;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center;
+    }
+    
+    .team_img {
+        width: 15em;
+    }
+    .services {
+        display: grid;
+        grid: auto / auto;
+        grid-gap: 10px;
+        padding: 10px;
+        justify-content: center; 
+    }
+    .services_img {
+        width: 12em;
+    }
+} */
+
+    
