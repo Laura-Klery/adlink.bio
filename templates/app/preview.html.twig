@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="preview_banner">
-    <img class="logo_banner" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="All Dev Long About">
+    <img class="logo_banner" src="{{ asset('/pictures/your_logo.png') }}" alt="All Dev Long About">
     <h1>Entreprise X</h1>
     <h2>Your baseline </h2>
     <button class= "btn" type="button">Contactez-nous</button>
@@ -12,7 +12,9 @@
 <div class="video" style="display: flex"> 
 <div class="">
     <h2>Vidéo</h2>
-<img class="video_video" src="{{ asset('/pictures/video.png') }}" alt="All Dev Long About">
+<video controls class="video_video"  alt="Video"  > 
+<source src="{{ asset('/pictures/video_preview.mp4') }}" type="video/mp4" >
+</video>
 </div>
 </div>
 <div>
@@ -23,21 +25,21 @@
      <div class= "promo_card">
     <button class= "btn_promo" type="button">XMAS</button> Frais de port offerts tout le mois de décembre</div>    
 </div>
-<div>
+<div class="learn">
     <h2>Pour en savoir plus </h2>
     
     <div class= "learn_more">
         <div class= "learn_more_card">
         <img class= "learn_more_img" src= "{{ asset('/pictures/service_1.png') }}" alt= "David Hackett Développeur"> 
-            <br></br><button class="btn" type="button">La boutique</button>
+            <br></br><button class="btn_learn_more" type="button">La boutique</button>
         </div>
         <div class= "learn_more_card">
         <img class= "learn_more_img" src= "{{ asset('/pictures/service_2.png') }}" alt= "David Hackett Développeur">
-            <br></br><button class="btn" type="button">Nos actualités</button>
+            <br></br><button class="btn_learn_more" type="button">Nos actualités</button>
         </div>
         <div class= "learn_more_card">
         <img class= "learn_more_img" src= "{{ asset('/pictures/service_3.png') }}" alt= "David Hackett Développeur"> 
-            <br></br><button class="btn" type="button">Nous contacter</button>
+            <br></br><button class="btn_learn_more" type="button">Nous contacter</button>
         </div> 
     </div>
 </div>

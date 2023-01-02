@@ -1,12 +1,21 @@
-/*ABNNER*/
+/*BANNER*/
 .preview_banner {
     background-image: url("http://127.0.0.1:8000/pictures/banner_preview.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 30em;
-    padding: 3em; 
+    height: 40em;
+    padding: 9em 2em; 
+    display: grid;
+    justify-items: center;
+    
+    h1 {
+        color: white;
+    }
+    h2 {
+        color: white;
+    }
 }
 /* PROMO */
 .promo {
@@ -24,12 +33,15 @@
 /* VIDEO */
 .video {
     justify-content: center;
-    padding: 1em;
+    padding: 4em;
 }
 .video_video {
-    width: 20em;
+    width: 40em;
 }
-/* SERVICES*/
+/* EN SAVOIR PLUS */
+.learn {
+    padding: 3em;
+}
 .learn_more  {
     display: grid;
     grid: auto / auto auto auto auto auto;
@@ -43,10 +55,17 @@
     padding: 2em;
 }
 .learn_more_img {
-    width: 15em;
+    height: 15em;
 }
 .learn_more h3, p  {
     text-align: center;
+}
+.btn_learn_more {
+    width: -webkit-fill-available;
+    padding: 0.5em;
+    border-radius: 0;
+    border: 1px solid grey;
+
 }
 
 /* RESPONSIVE */
@@ -59,7 +78,7 @@
         justify-content: center; 
     }
     .learn_more_img {
-        width: 20em;
+        height: 15em;
     }
 } 
 @media screen and (max-width: 1530px) {
@@ -71,7 +90,7 @@
         justify-content: center; 
     }
     .learn_more_img {
-        width: 20em;
+        height: 12em;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -83,7 +102,16 @@
         justify-content: center; 
     }
     .learn_more_img {
-        width: 15em;
+        width: 20em;
+    }
+    .promo_card  {
+        margin: 1em 2em;
+    }
+    .btn_promo {
+        padding: 1em;
+    }
+    .video_video {
+        width: 20em;
     }
     
 }

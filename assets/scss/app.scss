@@ -16,6 +16,7 @@ h2 {
     font-family: 'Bitter', serif;
     font-size: 1.5em;
     color: #575756;
+    
 }
 /* HEADER*/
 
@@ -56,11 +57,23 @@ a {
     position: relative;
     justify-content: space-between;
     align-items: center;
+    
+    a {
+        padding: 0.5em;
+    }
 }
     
-.menu li:active {
+.menu a:active {
     border-bottom: 2px solid $tertiary-color;
     transition: 0.3s ease;
+    text-decoration: none;
+    
+
+}
+.menu a:hover {
+    border-bottom: 2px solid $tertiary-color;
+    transition: 0.3s ease;
+    text-decoration: none;
 }
     
 .menu li {
@@ -90,7 +103,7 @@ a {
     background-color: #101010;
 }
 
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .nav_links {
         display: flex;
         position: fixed;
@@ -102,6 +115,7 @@ a {
         border-radius: 10px;
         text-align: center;
         transition: 0.3s;
+        z-index: 2;
         box-shadow:
             0 10px 27px rgba(0, 0, 0, 0.05);
     }
@@ -170,6 +184,10 @@ p {
     color: #575756;
     padding: 1em 1.5em;
     margin-top: -0.3em;
+
+    a {
+        padding: 0 1em;
+    }
 }
 .footer_link { 
     width: 50%;
@@ -179,11 +197,15 @@ p {
     width: 50%;
     text-align: left;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .footer_top {
         width: 100%;
         display: grid;
         padding: 0.5em;
+        p {
+            text-align: center;
+        }
+
     }
     .footer_left {
         width: 100%;

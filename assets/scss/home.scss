@@ -3,11 +3,16 @@ $secondary-color: #DADADA;
 $tertiary-color: #61A8DD;
 body {
     background-color: #DADADA;
+    display: unset!important;
 
 }
 h2 {
     text-align: center;
+    padding: 1em;
     
+}
+h1 {
+    color: white;
 }
 hr {
     background-color: #61A8DD;
@@ -20,7 +25,7 @@ hr {
 .btn{
     background-color: $primary-color;
     border-radius: 5px;
-    padding: 0.5em;
+    padding: 1em 2em;
     color: white;
     border: 1px solid $tertiary-color;
 
@@ -36,12 +41,18 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    height: 30em;
-    padding: 3em; 
+    height: 40em;
+    padding: 9em 2em; 
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    h2 {
+        color: white;
+    }
 }
 
 /*ABOUT*/
-.About {
+.about {
     display: flex!important;
     float: left;
     padding: 2em;
@@ -135,7 +146,10 @@ hr {
     }
 
     .team_img {
-        width: 15em;
+        width: 12em;
+    }
+    .team_card {
+        padding: 2em;
     }
     .services {
         display: grid;
@@ -149,10 +163,29 @@ hr {
     }
     
 }
-/*@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
+   .about {
+    display: grid!important;
+    justify-items: center;
+   }
+   .col-1 {
+    width: fit-content;
+    padding: 0;
+   }
+   .col-2, .col-3 {
+    padding: 0.5em;
+    width: 40%;
+   } 
+}
+@media screen and (max-width: 580px) {
+
+    .col-2, .col-3 {
+    padding: 0.5em;
+    width: 70%;
+    } 
     
 }
-
+/*
 @media screen and (max-width: 992px) {
 } */
 
