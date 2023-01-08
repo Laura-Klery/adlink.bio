@@ -11,7 +11,7 @@
         <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
     </div>
     <section class="section_form">
-         <form action="{{ path('login') }}" method="post">
+         <form action="{{ path('login') }}" method="POST">
             <div class="form_group">
                 <img src="{{ asset('pictures/icon-avatar.svg') }}">
                 <label for="username">Email :</label>
@@ -24,15 +24,15 @@
             </div>
             {# If you want to control the URL the user is redirected to on success
             <input type="hidden" name="_target_path" value="/account"/> #}
-            <div>
-                <button type="submit">Se connecter</button>
-                <button type="reset">Annuler</button>
+            <div class="connexion_div_btn">
+                <button class="connexion_form_btn" type="submit">Se connecter</button>
+                <button class="connexion_form_btn" type="reset">Annuler</button>
             </div>
         </form>
-        <div class="switch_form">
-            <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
-        </div>
     </section>
+    <div class="switch_form">
+        <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
+    </div>
     <section class="section_form_img">
         <img src="{{ asset('pictures/connexion.svg') }}" alt="image d'une personne devant un portable avec un formulaire de connexion.">
     </section>
