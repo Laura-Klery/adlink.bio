@@ -10,6 +10,8 @@ import './scss/app.scss';
 import './scss/home.scss';
 import './scss/preview.scss';
 
+import './scss/login.scss';
+import './scss/register.scss';
 
 import script from './script/menu.js';
 
