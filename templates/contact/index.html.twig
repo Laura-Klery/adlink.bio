@@ -1,11 +1,15 @@
 
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Contact- {{ parent() }}{% endblock %}
 
 {% block body %}
+
 <main>
 <header>
+
+
     <div class="titre">  
         <h1>  </h1>
             <div class="image1">
@@ -18,23 +22,148 @@
 </header>
  
 <h1>Nous Contacter</h1>
-{{ form_start(form) }}
+
 <div class="col-md-5">
+
 <div class="p-4 mb-3 bg-white">
-<p class="mb-4 font-weight-bold"><img class="col-3" src="/pictures/adresse.ico" alt="Adresse">123 Mockup St,New York</p>
+<p class="mb-4 font-weight-bold"><a href="#"> <i class="fa-solid fa-location-dot"></i></a>123 Mockup St,New York</p><br>
+
 <p class="mb-0 font-weight-bold"></p>
-<p class="mb-4"><a href="#"><img class="col-3" src="/pictures/telephone.ico" alt="Telephone">(+1)123 456 78 90</a></p>
+<p class="mb-4 font-weight-bold"><a href="#"><i class="fa-solid fa-mobile-screen"></i>(+1)123 456 78 90</a></p><br>
+
 <p class="mb-0 font-weight-bold"></p>
-<p class="mb-4"><a href="#"><img class="col-3" src="/pictures/fixe.ico" alt="Fixe">(+1)123 456 78 91</a></p>
+<p class="mb-4 font-weight-bold"><a href="#"><i class="fa-solid fa-phone"></i></a>(+1)123 456 78 91</a></p><br>
 </div>
 
+<form class="row row-cols-lg-auto g-3 align-items-center">
 
+<div class="col-auto">
+<div style="text-align: center" >
+  <style>
+    label{
+        font-size: x-large;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+        
+        
+        
 
+}
+</style>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Nom" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+  
+</div>
+<div class="mb-3">
+<div style="text-align: center" >
+<style>
+label{
+        font-size: Xx-large;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+        
+        
+        
 
+}
+</style>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Prenom" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
+</div>
+<div class="mb-3">
+<div style="text-align: center" >
+<style>
+label{
+        font-size: x-large;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+        
+        
+        
+
+}
+</style>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+</div>
+<div class="col-auto">
+<style>
+Select{
+    display: inline-block;
+  background-color:  #0000FF;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+
+}
+</style>
+
+    <label class="visually-hidden" for="autoSizingSelect"></label>
+    <div style="text-align: center" >
+    <select class="form-select" id="autoSizingSelect">
+      <option selected>Object...</option>
+      <option value="1">Question</option>
+      <option value="2">Inquiétude</option>
+      <option value="3">Informations supplémen</option>
+    </select>
+  </div>
+
+<div class="mb-3">
+<div style="text-align: center" >
+<style>
+textarea{
+        font-size: 20px;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+         width: 20%;
+        height: 180px;
+        padding: 4px 10px;
+        border: 10px;
+        
+        
+
+}
+</style>
+
+  <label for="exampleFormControlTextarea1" class="form-label"placeholder="Message"></label>
+   
+  <textarea class="form-control" id="exampleFormControlTextarea1"placeholder="Message" rows="3"></textarea>
+</div>
+ <div class="col-12">
+ <div style="text-align: center" >
+ <style>
+button {
+  display: inline-block;
+  background-color: #808080;
+  border-radius: 10px;
+  border: 1px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 15px;
+  padding: 1px;
+  width: 93px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 1px;
+}
+ </style>
+ 
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
 <div class="container">
 
 </div><!--/container -->
 </main>
-{{ form_end(form) }}
+
 {% endblock %}
 
