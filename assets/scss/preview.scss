@@ -9,6 +9,7 @@
     padding: 9em 2em; 
     display: grid;
     justify-items: center;
+    z-index: 1;
     
     h1 {
         color: white;
@@ -67,7 +68,12 @@
     border: 1px solid grey;
 
 }
-
+/* RESEAUX */
+.social_media .fa-brands {
+    color: black;
+    padding: 1em 3em 2em 3em;
+    font-size: 2.5em;
+}
 /* RESPONSIVE */
 @media screen and (max-width: 1700px) {
     .learn_more {
@@ -110,8 +116,6 @@
     .btn_promo {
         padding: 1em;
     }
-    .video_video {
-        width: 20em;
-    }
+
     
 }
