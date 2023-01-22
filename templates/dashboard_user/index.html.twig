@@ -3,5 +3,11 @@
 {% block title %}Dashboard User - {{ parent() }} {% endblock %}
 
 {% block body %}
+    {% for user in users %}
+        <div class="connexion_title">
+            <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
+            <h1>Bonjour, {{ user.pseudo }}</h1>
+        </div>
+    {% endfor %}
     {{ form(account) }}
 {% endblock %}
