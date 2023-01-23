@@ -11,14 +11,14 @@
         <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
     </div>
     <section class="section_form">
-         <form action="{{ path('dashboard_user') }}" method="POST">
+         <form action="{{ path('login') }}" method="POST">
             <div class="form_group">
-                <img src="{{ asset('pictures/icon-avatar.svg') }}">
+                <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
                 <label for="username">Email :</label>
                 <input type="text" id="username" name="_username" value="{{ last_username }}"/>
             </div>
             <div class="form_group">
-                <img src="{{ asset('pictures/icon-password.svg') }}">
+                <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
                 <label for="password">Mot de passe :</label>
                 <input type="password" id="password" name="_password"/>
             </div>

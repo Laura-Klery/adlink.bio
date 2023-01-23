@@ -8,26 +8,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/dashboard_user")
- */
 class DashboardUserController extends AbstractController
 {
     /**
-     * @Route("/", name="dashboard_user")
+     * @Route("/dashboard_user", name="dashboard_user")
      */
     public function index(UserRepository $userRepository): Response
     {
-        $informationsAccount = $this->createForm(InformationFormType::class);
-        $users = $userRepository->findAll();
+        $user = $userRepository->find($this->getUser());
+        $informationsAccount = $this->createForm(InformationFormType::class, $user);
+
         return $this->render('dashboard_user/index.html.twig', [
             'account' => $informationsAccount->createView(),
-            'users' => $users,
+            'user' => $user
         ]);
     }
 
     /**
-     * @Route("/{pseudo}", name="landing_page")
+     * @Route("/dashboard_user/{pseudo}", name="landing_page")
      */
     public function landingPage(): Response
     {
