@@ -42,8 +42,6 @@ security:
         # Les utilisateurs authentifiés peuvent accéder à leur dashobard
         - { path: ^/dashboard_user, roles: ROLE_USER }
 
-        # Les utilisateurs authentifiés peuvent accéder à leur landing-page
-        - { path: '/dashboard_user/[\w\-]*$', roles: ROLE_USER }
 
 
 
