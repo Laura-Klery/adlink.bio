@@ -1,7 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Dashboard User - {{ parent() }} {% endblock %}
+{% block title %}Dashboard Utilisateur - {{ parent() }} {% endblock %}
 
 {% block body %}
-    {{ form(account) }}
+    <div class="connexion_title">
+        <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
+        <h1>Bonjour, {{ user.pseudo }}</h1>
+    </div>
+    <section class="section_information">
+        <h2>Vos informations personnelles</h2>
+        {{ form_start(account, {'method': 'POST'}) }}
+            <div>
+                {{ form_label(account.firstName, 'Votre prénom :') }}
+                {{ form_widget(account.firstName, {'attr':{'placeholer':  user.firstName } } ) }}
+            </div>
+        {{ form_end(account) }}
+    </section>
+    <section class="section_brand">
+        <h2>La Marque</h2>
+        {{ form(brand) }}
+    </section>
 {% endblock %}
