@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
+
 .body {
     background-color: #DADADA;
+    padding: 2em;
 }
 
-.dashboard_admin_card {
-    background-color: #f1f1f1 ;
+table {
+    background-color: #f1f1f1;
     border-radius: 20px;
     box-shadow: 4px 4px #696969;
-}
-.dashboard_user_line {
-    display: inline-block;
+    width: 100%;
     text-align: center;
-  }
+    padding: 1em 2em;
+}
+
+th,
+td {
+    font-family: 'Alegreya Sans', sans-serif;
+    width: 1%;
+    padding-bottom: 1em;
+}
+
+.dashboard_icon {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
