@@ -1,0 +1,99 @@
+$primary-color: #575756;
+$secondary-color: #DADADA;
+$tertiary-color: #61A8DD;
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
+
+.signin_title h1 {
+    text-align: start;
+    padding: 2em 1em 0em 3em;
+    color: $primary-color !important;
+    font-size: 2em;
+}
+
+.signin {
+    display: flex;
+    padding: 2em 2em 5em 6em;
+}
+
+.signin p {
+    text-align: start;
+    font-size: 0.8em;
+}
+
+.signin_form {
+    padding: 0;
+}
+
+.form_group2 {
+    padding: 0.5em;
+}
+
+.form_group2 input {
+    border-radius: 25px;
+    padding: 0.8em;
+    border: 1px solid $primary-color;
+
+}
+
+.signin_icon {
+    padding: 5em 0em 0 9em;
+
+}
+
+body {
+    box-sizing: border-box;
+    display: flex;
+
+}
+
+.signin button {
+    padding: 0.5em 1em;
+    border: 1px solid $primary-color;
+    background-color: $tertiary-color;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1em;
+
+}
+
+input[type="checkbox" i] {
+    appearance: none;
+    background-color: #fff;
+    margin: 1em 1em -0.2em 1em;
+    font: inherit;
+    width: 1.15em;
+    height: 1.15em;
+    border: 1px solid $primary-color;
+    border-radius: 0em;
+}
+
+@media screen and (max-width: 768px) {
+    .signin {
+        display: block;
+        padding: 2em;
+    }
+
+    .signin input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $primary-color ;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    input[type="checkbox" i] {
+        width: 1.15em;
+        border: 1px solid $primary-color;
+    }
+
+    .signin_icon {
+        padding: 0;
+
+    }
+
+    .signin_title h1 {
+        text-align: center;
+        padding: 1em;
+    }
+}
