@@ -5,18 +5,37 @@
 {% block body %}
     <h1>Inscription</h1>
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.firstName) }}
-        {{ form_row(registrationForm.lastName) }}
-        {{ form_row(registrationForm.pseudo) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.password, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms, {
-            label: 'J\'accepte les conditions d\'utilisations'
-        }) }}
-
-        <button type="submit" class="btn">Register</button>
+    {{ form_start(registrationForm, {'method': 'POST'}) }}
+    <div class="form_group">
+        {{ form_label(registrationForm.firstName, 'Votre prénom :') }}
+        {{ form_widget(registrationForm.firstName, {'attr': {'placeholder': 'Votre Prénom'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_label(registrationForm.lastName, 'Votre nom :') }}
+        {{ form_widget(registrationForm.lastName, {'attr': {'placeholder': 'Votre nom'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_label(registrationForm.pseudo, 'votre pseudo :') }}
+        {{ form_widget(registrationForm.pseudo, {'attr': {'placeholder': 'votre pseudo'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_label(registrationForm.email, 'Votre adresse mail :') }}
+        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'contact@contact.fr'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_label(registrationForm.password.first, 'Votre mot de passe :') }}
+        {{ form_widget(registrationForm.password.first, {'attr': {'placeholder': '********'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_label(registrationForm.password.second, 'Confirmation du mot de passe :') }}
+        {{ form_widget(registrationForm.password.second, {'attr': {'placeholder': '********'}}) }}
+    </div>
+    <div class="form_group">
+        {{ form_widget(registrationForm.agreeTerms) }}
+        <label>J'accepte les <a href="{{ path('mentions-legales') }}">conditions d'utilisations</a></label>
+    </div>
+    <div class="form_group">
+        {{ form_row(registrationForm.submit, { 'label': 'S\'inscrire' }) }}
+    </div>
     {{ form_end(registrationForm) }}
 {% endblock %}
