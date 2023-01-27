@@ -1,48 +1,58 @@
-{% block title %}Preview - {{parent()}} {% endblock %}
+{% extends 'base.html.twig' %}
+{% block title %} {{ user.firstName ~ user.lastName }} - {{ parent() }} {% endblock %}
 
 {% block body %}
-    <div class="preview_banner">
-        <img class="logo_banner" src="{{ asset('/pictures/your_logo.png') }}" alt="All Dev Long About">
-        <h1>Entreprise X</h1>
-        <h2>Your baseline </h2>
-        <button class= "btn" type="button">Contactez-nous</button>
-    </div>
-    <div class="video" style="display: flex">
-        <div class="">
-            <h2>Vidéo</h2>
-            <video controls class="video_video"  alt="Video"  >
-                <source src="{{ asset('/pictures/video_preview.mp4') }}" type="video/mp4" >
-            </video>
-        </div>
-    </div>
-    <div>
-    <h2>Codes Promo </h2>
-    <div class="promo">
-        <div class="promo_card">
-            <button class="btn_promo" type="button">SUMMER22</button> -10% sur tout le shop monsite.com</div>
-        <div class="promo_card">
-            <button class="btn_promo" type="button">XMAS</button> Frais de port offerts tout le mois de décembre</div>
-    </div>
-    <div class="learn">
-        <h2>Pour en savoir plus </h2>
-
-        <div class="learn_more">
-            <div class="learn_more_card">
-                <img class="learn_more_img" src= "{{ asset('/pictures/service_1.png') }}" alt= "David Hackett Développeur">
-                <br></br><button class="btn_learn_more" type="button">La boutique</button>
-            </div>
-            <div class= "learn_more_card">
-                <img class= "learn_more_img" src= "{{ asset('/pictures/service_2.png') }}" alt= "David Hackett Développeur">
-                <br></br><button class="btn_learn_more" type="button">Nos actualités</button>
-            </div>
-            <div class= "learn_more_card">
-                <img class= "learn_more_img" src= "{{ asset('/pictures/service_3.png') }}" alt= "David Hackett Développeur">
-                <br></br><button class="btn_learn_more" type="button">Nous contacter</button>
-            </div>
-        </div>
-    </div>
-    <div class="social_media">
-        <h2>Suivre toute nos actualités</h2>
-        <p><a href="#"><i class="fa-brands fa-tiktok"></i></a> <a href="#"><i class="fa-brands fa-twitter"></i></a> <a href="#"><i class="fa-brands fa-facebook-f"></i></a></p>
+    <div class="landing_container" style="font-family: {{ user.globalFontName }};">
+       {% if user.sectionBrand.enabled %}
+            <section class="section_brand" style="background-color: {{ user.sectionBrand.brandBackground }};">
+                <img class="logo_brand" src="{{ vich_uploader_asset(user.sectionBrand, 'logoFile') }}" alt="Logo de la marque">
+                <h1 style="color: {{ user.sectionBrand.brandNameColor }}">{{ user.sectionBrand.brandName }}</h1>
+                <span style="color: {{ user.sectionBrand.brandBaselineColor }}">{{ user.sectionBrand.baseline }}</span>
+            </section>
+        {% endif %}
+        {% if user.sectionVideo.enabled %}
+            <section class="section_video" style="background-color: {{ user.sectionVideo.sectionVideoBackground }}">
+                <iframe src="{{ user.sectionVideo.link }}" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"></iframe>
+            </section>
+        {% endif %}
+        {% if user.sectionPromotion.enabled %}
+            <section class="section_promotion" style="background-color: {{ user.sectionPromotion.sectionPromotionBackground }};">
+                {% for promotion in user.promotions %}
+                    <div class="promotion_card" style="background-color: {{ user.sectionPromotion.sectionPromotionCardBackground }};">
+                        <button class="promo_btn" style="background-color: {{ user.sectionPromotion.sectionPromotionButtonBackground }}; color: {{ user.sectionPromotion.sectionPromotionCodeColor }}" type="button">{{ promotion.code }}</button>
+                        <span class="promo_description" style="color: {{ user.sectionPromotion.sectionPromotionDescriptionColor }}">{{ promotion.description }}</span>
+                    </div>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% if user.sectionExternalSite.enabled %}
+            <section class="section_external_site" style="background-color: {{ user.sectionExternalSite.externalSiteBackground }}">
+                {% for externalSite in user.externalSites %}
+                    <a class="external_site_link" href="{{ externalSite.link }}" style="background-color: {{ user.sectionExternalSite.buttonBackground }}; color: {{ user.sectionExternalSite.externalSiteLinkColor }}">{{ externalSite.name }}</a>
+                {% endfor %}
+            </section>
+        {% endif %}
+        {% if user.sectionSocialNetwork.enabled %}
+            <section class="section_social_network" style="background-color: {{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}">
+                {% if user.socialNetwork.instagram %}
+                    <a target="_blank" href="{{ user.socialNetwork.instagram }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-instagram" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+                {% if user.socialNetwork.facebook %}
+                    <a target="_blank" href="{{ user.socialNetwork.facebook }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-facebook-f" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+               {% if user.socialNetwork.twitter %}
+                    <a target="_blank" href="{{ user.socialNetwork.twitter }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-twitter" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+                {% if user.socialNetwork.linkedin %}
+                    <a target="_blank" href="{{ user.socialNetwork.linkedin }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-linkedin-in" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+                {% if user.socialNetwork.tiktok %}
+                    <a target="_blank" href="{{ user.socialNetwork.tiktok }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-tiktok" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+                {% if user.socialNetwork.youtube %}
+                    <a target="_blank" href="{{ user.socialNetwork.youtube }}" class="rs" style="background-color:{{ user.sectionSocialNetwork.socialNetworkIconColor }}"><i class="fa-brands fa-youtube" style="color:{{ user.sectionSocialNetwork.sectionSocialNetworkBackground }}"></i></a>
+                {% endif %}
+            </section>
+        {% endif %}
     </div>
 {% endblock %}

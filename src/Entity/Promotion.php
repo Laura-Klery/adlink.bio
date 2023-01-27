@@ -28,9 +28,12 @@ class Promotion
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SectionPromotion::class, inversedBy="promotions")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="promotions")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $sectionPromotion;
+    private $user;
+
+
 
     public function getId(): ?int
     {
@@ -61,17 +64,15 @@ class Promotion
         return $this;
     }
 
-    public function getSectionPromotion(): ?SectionPromotion
+    public function getUser(): ?User
     {
-        return $this->sectionPromotion;
+        return $this->user;
     }
 
-    public function setSectionPromotion(?SectionPromotion $sectionPromotion): self
+    public function setUser(?User $user): self
     {
-        $this->sectionPromotion = $sectionPromotion;
+        $this->user = $user;
 
         return $this;
     }
-
-    public function __toString() { return $this->code; }
 }

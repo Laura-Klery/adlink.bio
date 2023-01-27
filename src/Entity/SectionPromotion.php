@@ -22,146 +22,124 @@ class SectionPromotion
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_promotion;
+    private $sectionPromotionBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_card_promotion;
+    private $sectionPromotionCardBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_code;
+    private $sectionPromotionButtonBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_description;
+    private $sectionPromotionCodeColor;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_description;
+    private $sectionPromotionDescriptionColor;
 
     /**
-     * @ORM\OneToMany(targetEntity=Promotion::class, mappedBy="sectionPromotion")
+     * @ORM\Column(type="boolean")
      */
-    private $promotions;
+    private $enabled;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionPromotions")
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="sectionPromotion", cascade={"persist", "remove"})
      */
-    private $customer;
+    private $user;
 
-    public function __construct()
-    {
-        $this->promotions = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getBackgroundPromotion(): ?string
+    public function getSectionPromotionBackground(): ?string
     {
-        return $this->background_promotion;
+        return $this->sectionPromotionBackground;
     }
 
-    public function setBackgroundPromotion(?string $background_promotion): self
+    public function setSectionPromotionBackground(?string $sectionPromotionBackground): self
     {
-        $this->background_promotion = $background_promotion;
+        $this->sectionPromotionBackground = $sectionPromotionBackground;
 
         return $this;
     }
 
-    public function getBackgroundCardPromotion(): ?string
+    public function getSectionPromotionCardBackground(): ?string
     {
-        return $this->background_card_promotion;
+        return $this->sectionPromotionCardBackground;
     }
 
-    public function setBackgroundCardPromotion(?string $background_card_promotion): self
+    public function setSectionPromotionCardBackground(?string $sectionPromotionCardBackground): self
     {
-        $this->background_card_promotion = $background_card_promotion;
+        $this->sectionPromotionCardBackground = $sectionPromotionCardBackground;
 
         return $this;
     }
 
-    public function getColorCode(): ?string
+    public function getSectionPromotionButtonBackground(): ?string
     {
-        return $this->color_code;
+        return $this->sectionPromotionButtonBackground;
     }
 
-    public function setColorCode(?string $color_code): self
+    public function setSectionPromotionButtonBackground(?string $sectionPromotionButtonBackground): self
     {
-        $this->color_code = $color_code;
+        $this->sectionPromotionButtonBackground = $sectionPromotionButtonBackground;
 
         return $this;
     }
 
-    public function getColorDescription(): ?string
+    public function getSectionPromotionCodeColor(): ?string
     {
-        return $this->color_description;
+        return $this->sectionPromotionCodeColor;
     }
 
-    public function setColorDescription(?string $color_description): self
+    public function setSectionPromotionCodeColor(?string $sectionPromotionCodeColor): self
     {
-        $this->color_description = $color_description;
+        $this->sectionPromotionCodeColor = $sectionPromotionCodeColor;
 
         return $this;
     }
 
-    public function getBackgroundDescription(): ?string
+    public function getSectionPromotionDescriptionColor(): ?string
     {
-        return $this->background_description;
+        return $this->sectionPromotionDescriptionColor;
     }
 
-    public function setBackgroundDescription(?string $background_description): self
+    public function setSectionPromotionDescriptionColor(?string $sectionPromotionDescriptionColor): self
     {
-        $this->background_description = $background_description;
+        $this->sectionPromotionDescriptionColor = $sectionPromotionDescriptionColor;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, Promotion>
-     */
-    public function getPromotions(): Collection
+    public function isEnabled(): ?bool
     {
-        return $this->promotions;
+        return $this->enabled;
     }
 
-    public function addPromotion(Promotion $promotion): self
+    public function setEnabled(bool $enabled): self
     {
-        if (!$this->promotions->contains($promotion)) {
-            $this->promotions[] = $promotion;
-            $promotion->setSectionPromotion($this);
-        }
+        $this->enabled = $enabled;
 
         return $this;
     }
 
-    public function removePromotion(Promotion $promotion): self
+    public function getUser(): ?User
     {
-        if ($this->promotions->removeElement($promotion)) {
-            // set the owning side to null (unless already changed)
-            if ($promotion->getSectionPromotion() === $this) {
-                $promotion->setSectionPromotion(null);
-            }
-        }
-
-        return $this;
+        return $this->user;
     }
 
-    public function getCustomer(): ?User
+    public function setUser(?User $user): self
     {
-        return $this->customer;
-    }
-
-    public function setCustomer(?User $customer): self
-    {
-        $this->customer = $customer;
+        $this->user = $user;
 
         return $this;
     }
