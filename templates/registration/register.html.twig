@@ -3,39 +3,73 @@
 {% block title %}Inscription - {{ parent() }}{% endblock %}
 
 {% block body %}
+<div class="signin_title">
     <h1>Inscription</h1>
-
-    {{ form_start(registrationForm, {'method': 'POST'}) }}
-    <div class="form_group">
-        {{ form_label(registrationForm.firstName, 'Votre prénom :') }}
-        {{ form_widget(registrationForm.firstName, {'attr': {'placeholder': 'Votre Prénom'}}) }}
+ </div>
+<div class="signin">    
+        <div class="signin_form">
+            {{ form_start(registrationForm, {'method': 'POST'}) }}
+            <div class="form_group2">
+                {{ form_label(registrationForm.firstName, 'Votre prénom :') }}
+                {{ form_widget(registrationForm.firstName, {'attr': {'placeholder': 'Votre Prénom'}}) }}
+            </div>
+            <div class="form_group2">
+                {{ form_label(registrationForm.lastName, 'Votre nom :') }}
+                {{ form_widget(registrationForm.lastName, {'attr': {'placeholder': 'Votre nom'}}) }}
+            </div>
+            <div class="form_group2">
+                {{ form_label(registrationForm.pseudo, 'votre pseudo :') }}
+                {{ form_widget(registrationForm.pseudo, {'attr': {'placeholder': 'votre pseudo'}}) }}
+            </div>
+            <div class="form_group2">
+                {{ form_label(registrationForm.email, 'Votre adresse mail :') }}
+                {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'contact@contact.fr'}}) }}
+            </div>
+            <div class="form_group2">
+                {{ form_label(registrationForm.password.first, 'Votre mot de passe :') }}
+                {{ form_widget(registrationForm.password.first, {'attr': {'placeholder': '********'}}) }}
+            </div>
+            <div class="form_group2">
+                {{ form_label(registrationForm.password.second, 'Confirmation du mot de passe :') }}
+                {{ form_widget(registrationForm.password.second, {'attr': {'placeholder': '********'}}) }}
+            </div>
+            <div class="form_group3 cgu">
+                {{ form_widget(registrationForm.agreeTerms) }}
+                <label>J'accepte les <a href="{{ path('mentions-legales') }}">conditions d'utilisations</a></label>
+            </div>
+            <div class="form_group2">
+                {{ form_row(registrationForm.submit, { 'label': 'S\'inscrire' }) }}
+            </div>
+            {{ form_end(registrationForm) }}
+            <div class="switch_form">
+        <p>Déja un compte ? <a href="{{ path('login') }}">Se connecter</a></p>
     </div>
-    <div class="form_group">
-        {{ form_label(registrationForm.lastName, 'Votre nom :') }}
-        {{ form_widget(registrationForm.lastName, {'attr': {'placeholder': 'Votre nom'}}) }}
+        </div>
+    <div class="signin_icon">
+    <svg id="Groupe_5" data-name="Groupe 5" xmlns="http://www.w3.org/2000/svg" width="553.648" height="293" viewBox="0 0 653.648 393">
+    <path id="Tracé_16" data-name="Tracé 16" d="M227.024,682.954c-.044-.193-4.273-19.477,4.364-35.494s27.073-23.08,27.258-23.15l.843-.316.2.878c.044.193,4.273,19.477-4.364,35.494s-27.073,23.08-27.258,23.15l-.843.316Zm31.309-56.817c-3.693,1.589-18.268,8.541-25.562,22.068s-5.094,29.528-4.392,33.484c3.691-1.585,18.26-8.526,25.562-22.068s5.094-29.526,4.392-33.484Z" transform="translate(-192.92 -290.832)" fill="#f1f1f1"/>
+    <path id="Tracé_17" data-name="Tracé 17" d="M249.071,661.363c-15.521,9.338-21.5,27.885-21.5,27.885s19.187,3.408,34.707-5.93,21.5-27.885,21.5-27.885S264.592,652.025,249.071,661.363Z" transform="translate(-193.268 -297.447)" fill="#f1f1f1"/>
+    <path id="Tracé_18" data-name="Tracé 18" d="M546.69,464.859a8.512,8.512,0,0,0-8.231-10.13l-7.187-18.075-12.049,1.689,10.509,25.383a8.558,8.558,0,0,0,16.959,1.133Z" transform="translate(-255.844 -250.637)" fill="#9f616a"/>
+    <path id="Tracé_19" data-name="Tracé 19" d="M518.555,427.543l-3.734-8.9-23.266-44.287,1.265-81.947.243-.032c14.887-1.967,24.96,66.628,25.382,69.549l14.7,50.275,3.5,11.081Z" transform="translate(-249.908 -219.671)" fill="#61a8dd"/>
+    <path id="Tracé_20" data-name="Tracé 20" d="M296.517,472.739h11.312l5.381-43.632h-16.7Z" transform="translate(-63.62 -92.069)" fill="#9f616a"/>
+    <path id="Tracé_21" data-name="Tracé 21" d="M476.741,679.778h22.278a14.2,14.2,0,0,1,14.2,14.2v.462H476.742Z" transform="translate(-246.729 -302.801)" fill="#2f2e41"/>
+    <path id="Tracé_22" data-name="Tracé 22" d="M164.095,452.936l9.282,6.467,29.361-32.72-13.7-9.545Z" transform="translate(-35.208 -89.501)" fill="#9f616a"/>
+    <path id="Tracé_23" data-name="Tracé 23" d="M345.378,656.579l18.278,12.736h0a14.2,14.2,0,0,1,3.531,19.765l-.264.378L337,668.606Z" transform="translate(-216.746 -297.824)" fill="#2f2e41"/>
+    <path id="Tracé_24" data-name="Tracé 24" d="M448.542,623.732l-.489-81.851-7.118-51.467-13.27,45.26-.026.037-48.089,69.814-18.712-9.481.1-.244c1.144-2.72,28.089-66.6,35.332-66.6a3.911,3.911,0,0,0,3.332-1.464c2.126-2.839.395-8.862.377-8.922-2.073-8.6,3.14-11.525,4.178-12.014l2.793-57.649.289.02,75.708,5.31-3.176,72.077-6.832,94.435-.235.027Z" transform="translate(-221.862 -253.318)" fill="#2f2e41"/>
+    <path id="Tracé_25" data-name="Tracé 25" d="M495.449,432.524l-.327-.027L413.7,425.934l.2-26.941,3.985-70.343.023-.049,16.229-35.234,11.5-5.209,16.785-.883.041.01,15.318,3.8,15.935,114.391Z" transform="translate(-233.203 -218.586)" fill="#61a8dd"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="21.438" cy="21.438" r="21.438" transform="translate(192.476 32.321) rotate(-28.663)" fill="#9f616a"/>
+    <path id="Tracé_26" data-name="Tracé 26" d="M437.78,250.1v-8.353s-6.736-7.933.674-9.932c0,0,2.021-19.984,19.534-10.658,0,0,24.249-4,21.555,9.992,0,0,6.062-3.652,4.042,5.674l-3.908,15.023s1.887-9.923-4.175-11.256l-3.368-2s-9.43,9.326-23.576-2c0,0-6.062-1.447-5.389,4.548S437.78,250.1,437.78,250.1Z" transform="translate(-237.768 -203.867)" fill="#2f2e41"/>
+    <path id="Tracé_27" data-name="Tracé 27" d="M454.473,439.763a8.512,8.512,0,0,0-9.915-8.488l-10.314-16.492-11.551,3.824,14.893,23.085a8.558,8.558,0,0,0,16.887-1.929Z" transform="translate(-235.133 -245.944)" fill="#9f616a"/>
+    <path id="Tracé_28" data-name="Tracé 28" d="M424.139,408.788,405.478,370.9l.016-.092c.075-.419,7.587-42.126,13.331-57.456,5.781-15.427,13.695-18.525,14.029-18.649l.167-.062,7.1,6.806-9.829,65.605L440.883,398.7Z" transform="translate(-231.439 -220.167)" fill="#61a8dd"/>
+    <rect id="Rectangle_34" data-name="Rectangle 34" width="36.13" height="36.13" transform="translate(617.518)" fill="#f1f1f1"/>
+    <rect id="Rectangle_35" data-name="Rectangle 35" width="36.13" height="36.13" transform="translate(334.759 140.594)" fill="#f1f1f1"/>
+    <path id="Tracé_29" data-name="Tracé 29" d="M635.922,365.163H921.567V220.556H635.922Z" transform="translate(-280.883 -204.271)" fill="#fff"/>
+    <path id="Tracé_30" data-name="Tracé 30" d="M923.282,366.875H632.922V217.556H923.28Zm-285.645-4.713H918.569V222.269H637.635Z" transform="translate(-280.24 -203.627)" fill="#e5e5e5"/>
+    <rect id="Rectangle_36" data-name="Rectangle 36" width="219.771" height="7.288" transform="translate(389.326 67.01)" fill="#e5e5e5"/>
+    <rect id="Rectangle_37" data-name="Rectangle 37" width="219.771" height="7.288" transform="translate(389.326 84.685)" fill="#e5e5e5"/>
+    <rect id="Rectangle_38" data-name="Rectangle 38" width="40.843" height="6.325" transform="translate(568.254 110.782)" fill="#61a8dd"/>
+    <path id="Tracé_31" data-name="Tracé 31" d="M483.935,699.709H184.682a.785.785,0,1,1,0-1.571H483.935a.785.785,0,1,1,0,1.571Z" transform="translate(-183.897 -306.74)" fill="#cbcbcb"/>
+    </svg>
     </div>
-    <div class="form_group">
-        {{ form_label(registrationForm.pseudo, 'votre pseudo :') }}
-        {{ form_widget(registrationForm.pseudo, {'attr': {'placeholder': 'votre pseudo'}}) }}
-    </div>
-    <div class="form_group">
-        {{ form_label(registrationForm.email, 'Votre adresse mail :') }}
-        {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'contact@contact.fr'}}) }}
-    </div>
-    <div class="form_group">
-        {{ form_label(registrationForm.password.first, 'Votre mot de passe :') }}
-        {{ form_widget(registrationForm.password.first, {'attr': {'placeholder': '********'}}) }}
-    </div>
-    <div class="form_group">
-        {{ form_label(registrationForm.password.second, 'Confirmation du mot de passe :') }}
-        {{ form_widget(registrationForm.password.second, {'attr': {'placeholder': '********'}}) }}
-    </div>
-    <div class="form_group">
-        {{ form_widget(registrationForm.agreeTerms) }}
-        <label>J'accepte les <a href="{{ path('mentions-legales') }}">conditions d'utilisations</a></label>
-    </div>
-    <div class="form_group">
-        {{ form_row(registrationForm.submit, { 'label': 'S\'inscrire' }) }}
-    </div>
-    {{ form_end(registrationForm) }}
+</div>
 {% endblock %}

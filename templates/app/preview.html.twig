@@ -1,50 +1,66 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Preview - {{parent()}} {% endblock %}
+{% block title %}Preview -
+	{{parent()}}
+{% endblock %}
 
 {% block body %}
-<div class="preview_banner">
-    <img class="logo_banner" src="{{ asset('/pictures/your_logo.png') }}" alt="All Dev Long About">
-    <h1>Entreprise X</h1>
-    <h2>Your baseline </h2>
-    <button class= "btn" type="button">Contactez-nous</button>
-</div>
-<div class="video" style="display: flex"> 
-    <div class="">
-        <h2>Vidéo</h2>
-        <video controls class="video_video"  alt="Video"  >
-            <source src="{{ asset('/pictures/video_preview.mp4') }}" type="video/mp4" >
-        </video>
-    </div>
-</div>
-<div>
-    <h2>Codes Promo </h2>
-<div class="promo">
-    <div class= "promo_card">
-        <button class= "btn_promo" type="button">SUMMER22</button> -10% sur tout le shop monsite.com</div>
-     <div class= "promo_card">
-    <button class= "btn_promo" type="button">XMAS</button> Frais de port offerts tout le mois de décembre</div>    
-</div>
-<div class="learn">
-    <h2>Pour en savoir plus </h2>
-    
-    <div class= "learn_more">
-        <div class= "learn_more_card">
-        <img class= "learn_more_img" src= "{{ asset('/pictures/service_1.png') }}" alt= "David Hackett Développeur"> 
-            <br></br><button class="btn_learn_more" type="button">La boutique</button>
-        </div>
-        <div class= "learn_more_card">
-        <img class= "learn_more_img" src= "{{ asset('/pictures/service_2.png') }}" alt= "David Hackett Développeur">
-            <br></br><button class="btn_learn_more" type="button">Nos actualités</button>
-        </div>
-        <div class= "learn_more_card">
-        <img class= "learn_more_img" src= "{{ asset('/pictures/service_3.png') }}" alt= "David Hackett Développeur"> 
-            <br></br><button class="btn_learn_more" type="button">Nous contacter</button>
-        </div> 
-    </div>
-</div>
-<div class="social_media">
+	<div class="preview_banner">
+		<img class="logo_banner" src="{{ asset('/pictures/your_logo.png') }}" alt="All Dev Long About">
+		<h1>Entreprise X</h1>
+		<h2>Your baseline
+		</h2>
+		<button class="btn" type="button">Contactez-nous</button>
+	</div>
+	<div class="video" style="display: flex">
+		<div class="">
+			<h2>Vidéo</h2>
+			<video controls class="video_video" alt="Video">
+				<source src="{{ asset('/pictures/video_preview.mp4') }}" type="video/mp4">
+			</video>
+		</div>
+	</div>
+	<div>
+		<h2>Codes Promo
+		</h2>
+		<div class="promo">
+			<div class="promo_card">
+				<button class="btn_promo" type="button">SUMMER22</button>
+				-10% sur tout le shop monsite.com</div>
+			<div class="promo_card">
+				<button class="btn_promo" type="button">XMAS</button>
+				Frais de port offerts tout le mois de décembre</div>
+		</div>
+		<div class="learn">
+			<h2>Pour en savoir plus
+			</h2>
+
+			<div class="learn_more">
+				<div class="learn_more_card">
+					<img class="learn_more_img" src="{{ asset('/pictures/service_1.png') }}" alt="David Hackett Développeur">
+					<br></br>
+				<button class="btn_learn_more" type="button">La boutique</button>
+			</div>
+			<div class="learn_more_card">
+				<img class="learn_more_img" src="{{ asset('/pictures/service_2.png') }}" alt="David Hackett Développeur">
+				<br></br>
+			<button class="btn_learn_more" type="button">Nos actualités</button>
+		</div>
+		<div class="learn_more_card">
+			<img class="learn_more_img" src="{{ asset('/pictures/service_3.png') }}" alt="David Hackett Développeur">
+			<br></br>
+		<button class="btn_learn_more" type="button">Nous contacter</button>
+	</div>
+</div></div><div class="social_media">
 <h2>Suivre toute nos actualités</h2>
-<p><a href="#"><i class="fa-brands fa-tiktok"></i></a> <a href="#"><i class="fa-brands fa-twitter"></i></a> <a href="#"><i class="fa-brands fa-facebook-f"></i></a></p> 
-</div>
-{% endblock %}
+<p>
+	<a href="#">
+		<i class="fa-brands fa-tiktok"></i>
+	</a>
+	<a href="#">
+		<i class="fa-brands fa-twitter"></i>
+	</a>
+	<a href="#">
+		<i class="fa-brands fa-facebook-f"></i>
+	</a>
+</p></div>{% endblock %}
