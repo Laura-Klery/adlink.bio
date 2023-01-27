@@ -3,10 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\SectionBrandRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=SectionBrandRepository::class)
+ * @Vich\Uploadable
  */
 class SectionBrand
 {
@@ -18,14 +21,9 @@ class SectionBrand
     private $id;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
-     */
-    private $logo;
-
-    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $brand_name;
+    private $brandName;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -33,50 +31,61 @@ class SectionBrand
     private $baseline;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+      * @ORM\Column(type="string", length=255)
+      * @var string
      */
-    private $background_brand;
+      private $logo;
+
+    /**
+     * @Vich\UploadableField(mapping="logoBrand", fileNameProperty="logo")
+     * @var File
+     */
+    private $logoFile;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @var \DateTime
+     */
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_brand_name;
+    private $brandBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_baseline;
+    private $brandNameColor;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionBrands")
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $customer;
+    private $brandBaselineColor;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enabled;
+
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="sectionBrand", cascade={"persist", "remove"})
+     */
+    private $user;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getLogo(): ?string
-    {
-        return $this->logo;
-    }
-
-    public function setLogo(?string $logo): self
-    {
-        $this->logo = $logo;
-
-        return $this;
-    }
-
     public function getBrandName(): ?string
     {
-        return $this->brand_name;
+        return $this->brandName;
     }
 
-    public function setBrandName(?string $brand_name): self
+    public function setBrandName(string $brandName): self
     {
-        $this->brand_name = $brand_name;
+        $this->brandName = $brandName;
 
         return $this;
     }
@@ -93,53 +102,91 @@ class SectionBrand
         return $this;
     }
 
-    public function getBackgroundBrand(): ?string
+    public function setLogoFile(File $logo = null)
     {
-        return $this->background_brand;
+      $this->logoFile = $logo;
+
+      // VERY IMPORTANT:
+      // It is required that at least one field changes if you are using Doctrine,
+      // otherwise the event listeners won't be called and the file is lost
+      if ($logo) {
+        // if 'updatedAt' is not defined in your entity, use another property
+        $this->updatedAt = new \DateTime('now');
+      }
     }
 
-    public function setBackgroundBrand(?string $background_brand): self
+    public function getLogoFile()
     {
-        $this->background_brand = $background_brand;
+      return $this->logoFile;
+    }
+
+    public function setLogo($logo)
+    {
+      $this->logo = $logo;
+    }
+
+    public function getLogo()
+    {
+      return $this->logo;
+    }
+
+    public function getBrandBackground(): ?string
+    {
+        return $this->brandBackground;
+    }
+
+    public function setBrandBackground(string $brandBackground): self
+    {
+        $this->brandBackground = $brandBackground;
 
         return $this;
     }
 
-    public function getColorBrandName(): ?string
+    public function getBrandNameColor(): ?string
     {
-        return $this->color_brand_name;
+        return $this->brandNameColor;
     }
 
-    public function setColorBrandName(?string $color_brand_name): self
+    public function setBrandNameColor(string $brandNameColor): self
     {
-        $this->color_brand_name = $color_brand_name;
+        $this->brandNameColor = $brandNameColor;
 
         return $this;
     }
 
-    public function getColorBaseline(): ?string
+    public function getBrandBaselineColor(): ?string
     {
-        return $this->color_baseline;
+        return $this->brandBaselineColor;
     }
 
-    public function setColorBaseline(?string $color_baseline): self
+    public function setBrandBaselineColor(string $brandBaselineColor): self
     {
-        $this->color_baseline = $color_baseline;
+        $this->brandBaselineColor = $brandBaselineColor;
 
         return $this;
     }
 
-    public function getCustomer(): ?User
+    public function isEnabled(): ?bool
     {
-        return $this->customer;
+        return $this->enabled;
     }
 
-    public function setCustomer(?User $customer): self
+    public function setEnabled(bool $enabled): self
     {
-        $this->customer = $customer;
+        $this->enabled = $enabled;
 
         return $this;
     }
 
-    public function __toString() { return $this->brand_name; }
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
 }

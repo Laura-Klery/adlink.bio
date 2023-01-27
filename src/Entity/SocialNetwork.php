@@ -48,9 +48,11 @@ class SocialNetwork
     private $youtube;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SectionSocialNetwork::class, inversedBy="socialNetworks")
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="socialNetwork", cascade={"persist", "remove"})
      */
-    private $sectionSocialNetwork;
+    private $user;
+
+
 
     public function getId(): ?int
     {
@@ -129,14 +131,14 @@ class SocialNetwork
         return $this;
     }
 
-    public function getSectionSocialNetwork(): ?SectionSocialNetwork
+    public function getUser(): ?User
     {
-        return $this->sectionSocialNetwork;
+        return $this->user;
     }
 
-    public function setSectionSocialNetwork(?SectionSocialNetwork $sectionSocialNetwork): self
+    public function setUser(?User $user): self
     {
-        $this->sectionSocialNetwork = $sectionSocialNetwork;
+        $this->user = $user;
 
         return $this;
     }

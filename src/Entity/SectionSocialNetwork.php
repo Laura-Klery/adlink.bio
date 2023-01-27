@@ -22,95 +22,73 @@ class SectionSocialNetwork
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_social_network;
+    private $sectionSocialNetworkBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_icons;
+    private $socialNetworkIconColor;
 
     /**
-     * @ORM\OneToMany(targetEntity=SocialNetwork::class, mappedBy="sectionSocialNetwork")
+     * @ORM\Column(type="boolean")
      */
-    private $socialNetworks;
+    private $enabled;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionSocialNetworks")
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="sectionSocialNetwork", cascade={"persist", "remove"})
      */
-    private $customer;
+    private $user;
 
-    public function __construct()
-    {
-        $this->socialNetworks = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getBackgroundSocialNetwork(): ?string
+    public function getSectionSocialNetworkBackground(): ?string
     {
-        return $this->background_social_network;
+        return $this->sectionSocialNetworkBackground;
     }
 
-    public function setBackgroundSocialNetwork(?string $background_social_network): self
+    public function setSectionSocialNetworkBackground(?string $sectionSocialNetworkBackground): self
     {
-        $this->background_social_network = $background_social_network;
+        $this->sectionSocialNetworkBackground = $sectionSocialNetworkBackground;
 
         return $this;
     }
 
-    public function getColorIcons(): ?string
+    public function getSocialNetworkIconColor(): ?string
     {
-        return $this->color_icons;
+        return $this->socialNetworkIconColor;
     }
 
-    public function setColorIcons(?string $color_icons): self
+    public function setSocialNetworkIconColor(?string $socialNetworkIconColor): self
     {
-        $this->color_icons = $color_icons;
+        $this->socialNetworkIconColor = $socialNetworkIconColor;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, SocialNetwork>
-     */
-    public function getSocialNetworks(): Collection
+    public function isEnabled(): ?bool
     {
-        return $this->socialNetworks;
+        return $this->enabled;
     }
 
-    public function addSocialNetwork(SocialNetwork $socialNetwork): self
+    public function setEnabled(bool $enabled): self
     {
-        if (!$this->socialNetworks->contains($socialNetwork)) {
-            $this->socialNetworks[] = $socialNetwork;
-            $socialNetwork->setSectionSocialNetwork($this);
-        }
+        $this->enabled = $enabled;
 
         return $this;
     }
 
-    public function removeSocialNetwork(SocialNetwork $socialNetwork): self
+    public function getUser(): ?User
     {
-        if ($this->socialNetworks->removeElement($socialNetwork)) {
-            // set the owning side to null (unless already changed)
-            if ($socialNetwork->getSectionSocialNetwork() === $this) {
-                $socialNetwork->setSectionSocialNetwork(null);
-            }
-        }
-
-        return $this;
+        return $this->user;
     }
 
-    public function getCustomer(): ?User
+    public function setUser(?User $user): self
     {
-        return $this->customer;
-    }
-
-    public function setCustomer(?User $customer): self
-    {
-        $this->customer = $customer;
+        $this->user = $user;
 
         return $this;
     }

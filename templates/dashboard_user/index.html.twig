@@ -3,21 +3,78 @@
 {% block title %}Dashboard Utilisateur - {{ parent() }} {% endblock %}
 
 {% block body %}
-    <div class="connexion_title">
-        <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
-        <h1>Bonjour, {{ user.pseudo }}</h1>
-    </div>
-    <section class="section_information">
-        <h2>Vos informations personnelles</h2>
-        {{ form_start(account, {'method': 'POST'}) }}
-            <div>
-                {{ form_label(account.firstName, 'Votre prénom :') }}
-                {{ form_widget(account.firstName, {'attr':{'placeholer':  user.firstName } } ) }}
-            </div>
-        {{ form_end(account) }}
-    </section>
-    <section class="section_brand">
-        <h2>La Marque</h2>
-        {{ form(brand) }}
+    <section class="dashboard_user_container">
+        <div>
+            <h1>Bonjour, {{ user.pseudo }}</h1>
+            <a href="{{ path('landing_page', {pseudo: user.pseudo}) }}">Voir mon site</a>
+        </div>
+        <section class="section_information" id="information_account">
+            <h2>Vos informations personnelles</h2>
+            {{ form(sectionAccountForm) }}
+        </section>
+        <section class="section_brand" id="section_brand">
+            <h2>La Marque</h2>
+            {{ form(sectionBrandForm) }}
+            <!-- Mettre l'image en petite après l'import -->
+        </section>
+        <section class="section_video" id="section_video">
+            <h2>La Vidéo</h2>
+            {{ form(sectionVideoForm) }}
+        </section>
+        <section class="section_promotion" id="section_promotion">
+            <h2>Les Promotion</h2>
+            {{ form(sectionPromotionForm) }}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code promo</th>
+                        <th>Description</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for promotion in promotions %}
+                        <tr>
+                            <td>{{promotion.code}}</td>
+                            <td>{{promotion.description}}</td>
+                            <td>
+                                <a href="{{ path('deletePromotion', {id: promotion.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {{ form(promotionForm) }}
+        </section>
+        <section class="section_external_site" id="section_external_site">
+            <h2>Les Liens Externes</h2>
+            {{ form(sectionExternalSiteForm) }}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nom du lien</th>
+                        <th>Lien</th>
+                        <th>Supprimer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for externalSite in externalSites %}
+                        <tr>
+                            <td>{{externalSite.name}}</td>
+                            <td>{{externalSite.link}}</td>
+                            <td>
+                                <a href="{{ path('deleteExternalSite', {id: externalSite.id}) }}">Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {{ form(externalSiteForm) }}
+        </section>
+        <section class="section_social_network" id="section_social_network">
+            <h2>Les Réseaux Sociaux</h2>
+            {{ form(sectionSocialNetworkForm) }}
+            {{ form(socialNetworkForm) }}
+        </section>
     </section>
 {% endblock %}

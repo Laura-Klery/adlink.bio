@@ -28,9 +28,10 @@ class ExternalSite
     private $link;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SectionExternalSite::class, inversedBy="externalSites")
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="externalSites")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $section_external_site;
+    private $user;
 
     public function getId(): ?int
     {
@@ -61,17 +62,16 @@ class ExternalSite
         return $this;
     }
 
-    public function getSectionExternalSite(): ?SectionExternalSite
+    public function getUser(): ?User
     {
-        return $this->section_external_site;
+        return $this->user;
     }
 
-    public function setSectionExternalSite(?SectionExternalSite $section_external_site): self
+    public function setUser(?User $user): self
     {
-        $this->section_external_site = $section_external_site;
+        $this->user = $user;
 
         return $this;
     }
 
-    public function __toString() { return $this->name; }
 }
