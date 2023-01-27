@@ -17,21 +17,44 @@ class InformationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstName', TextType::class, ['label' => 'Votre prénom'])
-            ->add('lastName', TextType::class, ['label' => 'Votre nom'])
-            ->add('email', EmailType::class, ['label' => 'Votre email'])
-            ->add('pseudo', TextType::class, ['label' => 'Votre pseudo'])
-            ->add('password', PasswordType::class, ['label' => 'Votre mot de passe'])
-            ->add('global_font_name', ChoiceType::class, [
-                'label' => 'Polices', 
-                'choices' => [
-                    'Bitter' => 'Bitter',
-                    'Alegreya Sans' => 'Alegreya Sans',
-                    'Montserrat' => 'Montserrat',
-                    'Playfair Display' => 'Playfair Display',
-                    'Lora' => 'Lora',
-                ],
-            ])
+            ->add('firstName', TextType::class,
+                [
+                    'label' => 'Votre prénom',
+                    'required' => false
+                ])
+            ->add('lastName', TextType::class,
+                [
+                    'label' => 'Votre nom',
+                    'required' => false
+                ])
+            ->add('email', EmailType::class,
+                [
+                    'label' => 'Votre email',
+                    'required' => false
+                ])
+            ->add('pseudo', TextType::class,
+                [
+                    'label' => 'Votre pseudo',
+                    'required' => false
+                ])
+            ->add('password', PasswordType::class,
+                [
+                    'label' => 'Votre mot de passe',
+                    'required' => false
+                ])
+            ->add('globalFontName', ChoiceType::class,
+                [
+                    'label' => 'Choisissez la typographie de votre site',
+                    'choices' => [
+                        'Bitter' => 'Bitter',
+                        'Alegreya Sans' => 'Alegreya Sans',
+                        'Montserrat' => 'Montserrat',
+                        'Playfair Display' => 'Playfair Display',
+                        'Lora' => 'Lora',
+                        ],
+                    'required' => false,
+                    'placeholder' => false,
+                ])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
         ;
     }

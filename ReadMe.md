@@ -1,18 +1,22 @@
 # A faire pour lancer le projet
 
-1. composer update
+1. composer install
 
-2. npm install
+2. composer update
 
-3. symfony console doctrine:database:create
+3. npm install
 
-4. symfony console make:migration
+4. symfony console doctrine:database:create
 
-5. symfony console doctrine:migrations:migrate
+5. symfony console make:migration
 
-6. symfony server:start -d
+6. symfony console doctrine:migrations:migrate
 
-7. npm run watch
+7. Importer la base de données adlinklocal.sql dans la base de données présente dans phpMyAdmin
+
+8. symfony server:start -d
+
+9. npm run watch
 
 # Pour fermer le server symfony
 

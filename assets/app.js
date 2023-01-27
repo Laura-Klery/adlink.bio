@@ -7,14 +7,15 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './scss/app.scss';
+import menu from './script/menu.js';
 import './scss/home.scss';
 import './scss/preview.scss';
 import './scss/dashboard_admin.scss';
-
 import './scss/login.scss';
 import './scss/register.scss';
+import './scss/dashboard_user.scss';
+import './scss/landing_page.scss';
 
-import script from './script/menu.js';
 
 
 // start the Stimulus application

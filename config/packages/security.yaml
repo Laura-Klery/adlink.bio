@@ -17,31 +17,21 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-
             form_login:
                 login_path: login
                 check_path: login
-
+                default_target_path: dashboard_user
+                enable_csrf: true
             logout:
                 path: logout
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#the-firewall
-
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
-
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
     access_control:
         # Les admin peuvent accéder aux routes /admin
         - { path: ^/admin_dashboard, roles: ROLE_ADMIN }
 
         # Les utilisateurs authentifiés peuvent accéder à leur dashobard
         - { path: ^/dashboard_user, roles: ROLE_USER }
-        
-        # Les utilisateurs authentifiés peuvent accéder à leur landing-page
-        - { path: '/dashboard_user/[\w\-]*$', roles: ROLE_USER }
+
 
 when@test:
     security:

@@ -22,112 +22,89 @@ class SectionExternalSite
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_external_site;
+    private $externalSiteBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_button;
+    private $buttonBackground;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $color_name_link;
+    private $externalSiteLinkColor;
 
     /**
-     * @ORM\OneToMany(targetEntity=ExternalSite::class, mappedBy="section_external_site")
+     * @ORM\Column(type="boolean")
      */
-    private $externalSites;
+    private $enabled;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionExternalSites")
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="sectionExternalSite", cascade={"persist", "remove"})
      */
-    private $customer;
-
-    public function __construct()
-    {
-        $this->externalSites = new ArrayCollection();
-    }
+    private $user;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getBackgroundExternalSite(): ?string
+    public function getExternalSiteBackground(): ?string
     {
-        return $this->background_external_site;
+        return $this->externalSiteBackground;
     }
 
-    public function setBackgroundExternalSite(?string $background_external_site): self
+    public function setExternalSiteBackground(?string $externalSiteBackground): self
     {
-        $this->background_external_site = $background_external_site;
+        $this->externalSiteBackground = $externalSiteBackground;
 
         return $this;
     }
 
-    public function getBackgroundButton(): ?string
+    public function getButtonBackground(): ?string
     {
-        return $this->background_button;
+        return $this->buttonBackground;
     }
 
-    public function setBackgroundButton(?string $background_button): self
+    public function setButtonBackground(?string $buttonBackground): self
     {
-        $this->background_button = $background_button;
+        $this->buttonBackground = $buttonBackground;
 
         return $this;
     }
 
-    public function getColorNameLink(): ?string
+    public function getExternalSiteLinkColor(): ?string
     {
-        return $this->color_name_link;
+        return $this->externalSiteLinkColor;
     }
 
-    public function setColorNameLink(?string $color_name_link): self
+    public function setExternalSiteLinkColor(?string $externalSiteLinkColor): self
     {
-        $this->color_name_link = $color_name_link;
+        $this->externalSiteLinkColor = $externalSiteLinkColor;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, ExternalSite>
-     */
-    public function getExternalSites(): Collection
+    public function isEnabled(): ?bool
     {
-        return $this->externalSites;
+        return $this->enabled;
     }
 
-    public function addExternalSite(ExternalSite $externalSite): self
+    public function setEnabled(bool $enabled): self
     {
-        if (!$this->externalSites->contains($externalSite)) {
-            $this->externalSites[] = $externalSite;
-            $externalSite->setSectionExternalSite($this);
-        }
+        $this->enabled = $enabled;
 
         return $this;
     }
 
-    public function removeExternalSite(ExternalSite $externalSite): self
+    public function getUser(): ?User
     {
-        if ($this->externalSites->removeElement($externalSite)) {
-            // set the owning side to null (unless already changed)
-            if ($externalSite->getSectionExternalSite() === $this) {
-                $externalSite->setSectionExternalSite(null);
-            }
-        }
-
-        return $this;
+        return $this->user;
     }
 
-    public function getCustomer(): ?User
+    public function setUser(?User $user): self
     {
-        return $this->customer;
-    }
-
-    public function setCustomer(?User $customer): self
-    {
-        $this->customer = $customer;
+        $this->user = $user;
 
         return $this;
     }
