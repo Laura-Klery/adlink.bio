@@ -13,6 +13,8 @@ import './scss/preview.scss';
 import './scss/dashboard_admin.scss';
 import './scss/login.scss';
 import './scss/register.scss';
+import './scss/dashboard_user.scss';
+import './scss/landing_page.scss';
 
 
 
