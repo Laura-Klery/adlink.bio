@@ -1,29 +1,34 @@
 $primary-color: #575756;
 $secondary-color: #DADADA;
 $tertiary-color: #61A8DD;
+
 body {
     background-color: #DADADA;
-    display: unset!important;
+    display: unset !important;
 
 }
+
 h2 {
     text-align: center;
     padding: 1em;
-    
+
 }
+
 h1 {
-    color: white;
+    color: white!important;
     padding-top: 1em;
 }
+
 hr {
     background-color: #61A8DD;
     border-top: 2px solid #61A8DD;
     margin: 1em;
-    width: 40%; 
-    margin-left: 30% !important; 
+    width: 40%;
+    margin-left: 30% !important;
     margin-right: 30% !important;
 }
-.btn{
+
+.btn {
     background-color: $primary-color;
     border-radius: 5px;
     padding: 1em 2em;
@@ -31,24 +36,27 @@ hr {
     border: 1px solid $tertiary-color;
 
 }
+
 /* BANNER */
 .logo_banner {
     width: 200px;
 
 }
+
 .home_banner {
-   /* background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg"); */
+    /* background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg"); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-                       rgba(0, 0, 0, 0.5)), url("http://127.0.0.1:8000/pictures/home_banner.jpg");
+            rgba(0, 0, 0, 0.5)), url("http://127.0.0.1:8000/pictures/home_banner.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     height: 40em;
-    padding: 9em 2em; 
+    padding: 9em 2em;
     z-index: 1;
     display: grid;
     justify-items: center;
+
     h2 {
         color: white;
     }
@@ -56,28 +64,32 @@ hr {
 
 /*ABOUT*/
 .about {
-    display: flex!important;
+    display: flex !important;
     float: left;
     padding: 2em;
 }
 
 .col-1 {
-   width: 50%;
-   padding: 3em;
+    width: 50%;
+    padding: 3em;
 }
+
 .col-1 p {
     padding: 1em 0;
 }
+
 .col-2 {
     width: 25%;
-   padding: 3em 0.5em 3em 3em;
+    padding: 3em 0.5em 3em 3em;
 
 }
+
 .col-3 {
     width: 25%;
-   padding: 3em 3em 3em 0.5em;
+    padding: 3em 3em 3em 0.5em;
 
 }
+
 /*TEAM*/
 .team {
     display: grid;
@@ -87,7 +99,7 @@ hr {
     justify-content: center;
 }
 
-.team_img{
+.team_img {
     width: 15em;
 }
 
@@ -95,22 +107,27 @@ hr {
     text-align: center;
     padding: 3em;
 }
+
 /* SERVICES*/
-.services  {
+.services {
     display: grid;
     grid: auto / auto auto auto auto auto;
     grid-gap: 10px;
     padding: 10px;
     justify-content: center;
 }
+
 .services_card {
     text-align: center;
     padding: 2em;
 }
+
 .services_img {
     width: 15em;
 }
-.services h3, p  {
+
+.services h3,
+p {
     text-align: center;
 }
 
@@ -121,24 +138,28 @@ hr {
         grid: auto / auto auto auto auto;
         grid-gap: 10px;
         padding: 10px;
-        justify-content: center; 
+        justify-content: center;
     }
+
     .services_img {
         width: 20em;
     }
-} 
+}
+
 @media screen and (max-width: 1530px) {
     .services {
         display: grid;
         grid: auto / auto auto auto;
         grid-gap: 10px;
         padding: 10px;
-        justify-content: center; 
+        justify-content: center;
     }
+
     .services_img {
         width: 20em;
     }
 }
+
 @media screen and (max-width: 1200px) {
     .team {
         display: grid;
@@ -151,43 +172,53 @@ hr {
     .team_img {
         width: 12em;
     }
+
     .team_card {
         padding: 2em;
     }
+
     .services {
         display: grid;
-        grid: auto / auto ;
+        grid: auto / auto;
         grid-gap: 10px;
         padding: 10px;
-        justify-content: center; 
+        justify-content: center;
     }
+
     .services_img {
         width: 15em;
     }
-    
+
 }
+
 @media screen and (max-width: 1024px) {
-   .about {
-    display: grid!important;
-    justify-items: center;
-   }
-   .col-1 {
-    width: fit-content;
-    padding: 0;
-   }
-   .col-2, .col-3 {
-    padding: 0.5em;
-    width: 40%;
-   } 
+    .about {
+        display: grid !important;
+        justify-items: center;
+    }
+
+    .col-1 {
+        width: fit-content;
+        padding: 0;
+    }
+
+    .col-2,
+    .col-3 {
+        padding: 0.5em;
+        width: 40%;
+    }
 }
+
 @media screen and (max-width: 580px) {
 
-    .col-2, .col-3 {
-    padding: 0.5em;
-    width: 70%;
-    } 
-    
+    .col-2,
+    .col-3 {
+        padding: 0.5em;
+        width: 70%;
+    }
+
 }
+
 /*
 @media screen and (max-width: 992px) {
 } */
@@ -215,5 +246,3 @@ hr {
         width: 12em;
     }
 } */
-
-    
