@@ -57,40 +57,52 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $global_font_name;
+    private $globalFontName;
 
     /**
-     * @ORM\OneToMany(targetEntity=SectionBrand::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=ExternalSite::class, mappedBy="user", orphanRemoval=true)
      */
-    private $sectionBrands;
+    private $externalSites;
 
     /**
-     * @ORM\OneToMany(targetEntity=SectionExternalSite::class, mappedBy="customer")
+     * @ORM\OneToMany(targetEntity=Promotion::class, mappedBy="user", orphanRemoval=true)
      */
-    private $sectionExternalSites;
+    private $promotions;
 
     /**
-     * @ORM\OneToMany(targetEntity=SectionPromotion::class, mappedBy="customer")
+     * @ORM\OneToOne(targetEntity=SectionBrand::class, mappedBy="user", cascade={"persist", "remove"})
      */
-    private $sectionPromotions;
+    private $sectionBrand;
 
     /**
-     * @ORM\OneToMany(targetEntity=SectionSocialNetwork::class, mappedBy="customer")
+     * @ORM\OneToOne(targetEntity=SectionExternalSite::class, mappedBy="user", cascade={"persist", "remove"})
      */
-    private $sectionSocialNetworks;
+    private $sectionExternalSite;
 
     /**
-     * @ORM\OneToMany(targetEntity=SectionVideo::class, mappedBy="customer")
+     * @ORM\OneToOne(targetEntity=SectionPromotion::class, mappedBy="user", cascade={"persist", "remove"})
      */
-    private $sectionVideos;
+    private $sectionPromotion;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SectionSocialNetwork::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $sectionSocialNetwork;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SectionVideo::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $sectionVideo;
+
+    /**
+     * @ORM\OneToOne(targetEntity=SocialNetwork::class, mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $socialNetwork;
 
     public function __construct()
     {
-        $this->sectionBrands = new ArrayCollection();
-        $this->sectionExternalSites = new ArrayCollection();
-        $this->sectionPromotions = new ArrayCollection();
-        $this->sectionSocialNetworks = new ArrayCollection();
-        $this->sectionVideos = new ArrayCollection();
+        $this->externalSites = new ArrayCollection();
+        $this->promotions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -220,40 +232,40 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getGlobalFontName(): ?string
     {
-        return $this->global_font_name;
+        return $this->globalFontName;
     }
 
-    public function setGlobalFontName(?string $global_font_name): self
+    public function setGlobalFontName(?string $globalFontName): self
     {
-        $this->global_font_name = $global_font_name;
+        $this->globalFontName = $globalFontName;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, SectionBrand>
+     * @return Collection<int, ExternalSite>
      */
-    public function getSectionBrands(): Collection
+    public function getExternalSites(): Collection
     {
-        return $this->sectionBrands;
+        return $this->externalSites;
     }
 
-    public function addSectionBrand(SectionBrand $sectionBrand): self
+    public function addExternalSite(ExternalSite $externalSite): self
     {
-        if (!$this->sectionBrands->contains($sectionBrand)) {
-            $this->sectionBrands[] = $sectionBrand;
-            $sectionBrand->setCustomer($this);
+        if (!$this->externalSites->contains($externalSite)) {
+            $this->externalSites[] = $externalSite;
+            $externalSite->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeSectionBrand(SectionBrand $sectionBrand): self
+    public function removeExternalSite(ExternalSite $externalSite): self
     {
-        if ($this->sectionBrands->removeElement($sectionBrand)) {
+        if ($this->externalSites->removeElement($externalSite)) {
             // set the owning side to null (unless already changed)
-            if ($sectionBrand->getCustomer() === $this) {
-                $sectionBrand->setCustomer(null);
+            if ($externalSite->getUser() === $this) {
+                $externalSite->setUser(null);
             }
         }
 
@@ -261,124 +273,164 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * @return Collection<int, SectionExternalSite>
+     * @return Collection<int, Promotion>
      */
-    public function getSectionExternalSites(): Collection
+    public function getPromotions(): Collection
     {
-        return $this->sectionExternalSites;
+        return $this->promotions;
     }
 
-    public function addSectionExternalSite(SectionExternalSite $sectionExternalSite): self
+    public function addPromotion(Promotion $promotion): self
     {
-        if (!$this->sectionExternalSites->contains($sectionExternalSite)) {
-            $this->sectionExternalSites[] = $sectionExternalSite;
-            $sectionExternalSite->setCustomer($this);
+        if (!$this->promotions->contains($promotion)) {
+            $this->promotions[] = $promotion;
+            $promotion->setUser($this);
         }
 
         return $this;
     }
 
-    public function removeSectionExternalSite(SectionExternalSite $sectionExternalSite): self
+    public function removePromotion(Promotion $promotion): self
     {
-        if ($this->sectionExternalSites->removeElement($sectionExternalSite)) {
+        if ($this->promotions->removeElement($promotion)) {
             // set the owning side to null (unless already changed)
-            if ($sectionExternalSite->getCustomer() === $this) {
-                $sectionExternalSite->setCustomer(null);
+            if ($promotion->getUser() === $this) {
+                $promotion->setUser(null);
             }
         }
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, SectionPromotion>
-     */
-    public function getSectionPromotions(): Collection
+    public function getSectionBrand(): ?SectionBrand
     {
-        return $this->sectionPromotions;
+        return $this->sectionBrand;
     }
 
-    public function addSectionPromotion(SectionPromotion $sectionPromotion): self
+    public function setSectionBrand(?SectionBrand $sectionBrand): self
     {
-        if (!$this->sectionPromotions->contains($sectionPromotion)) {
-            $this->sectionPromotions[] = $sectionPromotion;
-            $sectionPromotion->setCustomer($this);
+        // unset the owning side of the relation if necessary
+        if ($sectionBrand === null && $this->sectionBrand !== null) {
+            $this->sectionBrand->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($sectionBrand !== null && $sectionBrand->getUser() !== $this) {
+            $sectionBrand->setUser($this);
+        }
+
+        $this->sectionBrand = $sectionBrand;
 
         return $this;
     }
 
-    public function removeSectionPromotion(SectionPromotion $sectionPromotion): self
+    public function getSectionExternalSite(): ?SectionExternalSite
     {
-        if ($this->sectionPromotions->removeElement($sectionPromotion)) {
-            // set the owning side to null (unless already changed)
-            if ($sectionPromotion->getCustomer() === $this) {
-                $sectionPromotion->setCustomer(null);
-            }
+        return $this->sectionExternalSite;
+    }
+
+    public function setSectionExternalSite(?SectionExternalSite $sectionExternalSite): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($sectionExternalSite === null && $this->sectionExternalSite !== null) {
+            $this->sectionExternalSite->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($sectionExternalSite !== null && $sectionExternalSite->getUser() !== $this) {
+            $sectionExternalSite->setUser($this);
+        }
+
+        $this->sectionExternalSite = $sectionExternalSite;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, SectionSocialNetwork>
-     */
-    public function getSectionSocialNetworks(): Collection
+    public function getSectionPromotion(): ?SectionPromotion
     {
-        return $this->sectionSocialNetworks;
+        return $this->sectionPromotion;
     }
 
-    public function addSectionSocialNetwork(SectionSocialNetwork $sectionSocialNetwork): self
+    public function setSectionPromotion(?SectionPromotion $sectionPromotion): self
     {
-        if (!$this->sectionSocialNetworks->contains($sectionSocialNetwork)) {
-            $this->sectionSocialNetworks[] = $sectionSocialNetwork;
-            $sectionSocialNetwork->setCustomer($this);
+        // unset the owning side of the relation if necessary
+        if ($sectionPromotion === null && $this->sectionPromotion !== null) {
+            $this->sectionPromotion->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($sectionPromotion !== null && $sectionPromotion->getUser() !== $this) {
+            $sectionPromotion->setUser($this);
+        }
+
+        $this->sectionPromotion = $sectionPromotion;
 
         return $this;
     }
 
-    public function removeSectionSocialNetwork(SectionSocialNetwork $sectionSocialNetwork): self
+    public function getSectionSocialNetwork(): ?SectionSocialNetwork
     {
-        if ($this->sectionSocialNetworks->removeElement($sectionSocialNetwork)) {
-            // set the owning side to null (unless already changed)
-            if ($sectionSocialNetwork->getCustomer() === $this) {
-                $sectionSocialNetwork->setCustomer(null);
-            }
+        return $this->sectionSocialNetwork;
+    }
+
+    public function setSectionSocialNetwork(?SectionSocialNetwork $sectionSocialNetwork): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($sectionSocialNetwork === null && $this->sectionSocialNetwork !== null) {
+            $this->sectionSocialNetwork->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($sectionSocialNetwork !== null && $sectionSocialNetwork->getUser() !== $this) {
+            $sectionSocialNetwork->setUser($this);
+        }
+
+        $this->sectionSocialNetwork = $sectionSocialNetwork;
 
         return $this;
     }
 
-    /**
-     * @return Collection<int, SectionVideo>
-     */
-    public function getSectionVideos(): Collection
+    public function getSectionVideo(): ?SectionVideo
     {
-        return $this->sectionVideos;
+        return $this->sectionVideo;
     }
 
-    public function addSectionVideo(SectionVideo $sectionVideo): self
+    public function setSectionVideo(?SectionVideo $sectionVideo): self
     {
-        if (!$this->sectionVideos->contains($sectionVideo)) {
-            $this->sectionVideos[] = $sectionVideo;
-            $sectionVideo->setCustomer($this);
+        // unset the owning side of the relation if necessary
+        if ($sectionVideo === null && $this->sectionVideo !== null) {
+            $this->sectionVideo->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($sectionVideo !== null && $sectionVideo->getUser() !== $this) {
+            $sectionVideo->setUser($this);
+        }
+
+        $this->sectionVideo = $sectionVideo;
 
         return $this;
     }
 
-    public function removeSectionVideo(SectionVideo $sectionVideo): self
+    public function getSocialNetwork(): ?SocialNetwork
     {
-        if ($this->sectionVideos->removeElement($sectionVideo)) {
-            // set the owning side to null (unless already changed)
-            if ($sectionVideo->getCustomer() === $this) {
-                $sectionVideo->setCustomer(null);
-            }
+        return $this->socialNetwork;
+    }
+
+    public function setSocialNetwork(?SocialNetwork $socialNetwork): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($socialNetwork === null && $this->socialNetwork !== null) {
+            $this->socialNetwork->setUser(null);
         }
+
+        // set the owning side of the relation if necessary
+        if ($socialNetwork !== null && $socialNetwork->getUser() !== $this) {
+            $socialNetwork->setUser($this);
+        }
+
+        $this->socialNetwork = $socialNetwork;
 
         return $this;
     }
-
-    public function __toString() { return $this->firstName; }
 }

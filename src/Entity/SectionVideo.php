@@ -25,12 +25,17 @@ class SectionVideo
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $background_video;
+    private $sectionVideoBackground;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="sectionVideos")
+     * @ORM\Column(type="boolean")
      */
-    private $customer;
+    private $enabled;
+
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, inversedBy="sectionVideo", cascade={"persist", "remove"})
+     */
+    private $user;
 
     public function getId(): ?int
     {
@@ -49,26 +54,38 @@ class SectionVideo
         return $this;
     }
 
-    public function getBackgroundVideo(): ?string
+    public function getSectionVideoBackground(): ?string
     {
-        return $this->background_video;
+        return $this->sectionVideoBackground;
     }
 
-    public function setBackgroundVideo(?string $background_video): self
+    public function setSectionVideoBackground(?string $sectionVideoBackground): self
     {
-        $this->background_video = $background_video;
+        $this->sectionVideoBackground = $sectionVideoBackground;
 
         return $this;
     }
 
-    public function getCustomer(): ?User
+    public function isEnabled(): ?bool
     {
-        return $this->customer;
+        return $this->enabled;
     }
 
-    public function setCustomer(?User $customer): self
+    public function setEnabled(bool $enabled): self
     {
-        $this->customer = $customer;
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
