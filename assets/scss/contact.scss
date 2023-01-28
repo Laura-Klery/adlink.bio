@@ -1,14 +1,25 @@
--body {
-       background-color: rgba(95, 14, 14, 0.381);
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
+
+body {
+       background-color: rgba(113, 111, 114, 0.783);
     }
-    #form_contact {
+    form{
         display: table-cell;
         text-align: center;
         vertical-align: middle;
      }
+     h1 {
+      text-align: center;
+  }
+  h2 {
+    text-align: center;
+}
+h3{ display:flex;padding:9px 8px;
+
+}
      button {
         display: inline-block;
-        background-color: #7b38d8;
+        background-color: #756887;
         border-radius: 10px;
         border: 4px double #cccccc;
         color: #eeeeee;
@@ -22,4 +33,30 @@
         transition: all 0.5s;
         cursor: pointer;
         margin: 5px;
+      }
+      textarea{
+        font-size: 20px;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+         width: 20%;
+        height: 180px;
+        padding: 4px 10px;
+        border: 10px;
+        
+        
+
+}
+      label {
+        font-size: 20px;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+      @media all and (max-widht:800px){
+            .image{
+              display: none;
+            }
+            .form{
+              display: none;
+            }
       }
