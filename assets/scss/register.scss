@@ -3,11 +3,17 @@ $secondary-color: #DADADA;
 $tertiary-color: #61A8DD;
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
 
-.signin_title h1 {
+.signin_title {
+    display: flex;
+h1 {
     text-align: start;
     padding: 2em 1em 0em 3em;
     color: $primary-color !important;
     font-size: 2em;
+}
+img {
+    width: 2em;
+}
 }
 
 .signin {
@@ -27,7 +33,10 @@ $tertiary-color: #61A8DD;
 .form_group2 {
     padding: 0.5em;
 }
-
+.form_group2 img {
+    width: 2em;
+    margin: -0.5em 0;
+}
 .form_group2 input {
     border-radius: 25px;
     padding: 0.8em;
@@ -69,6 +78,9 @@ input[type="checkbox" i] {
 }
 
 @media screen and (max-width: 768px) {
+    .form_group2 label {
+        display: none;
+    }
     .signin {
         display: block;
         padding: 2em;
@@ -91,7 +103,9 @@ input[type="checkbox" i] {
         padding: 0;
 
     }
-
+    .signin img {
+    max-width: 20em;
+    }
     .signin_title h1 {
         text-align: center;
         padding: 1em;

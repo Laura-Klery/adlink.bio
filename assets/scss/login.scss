@@ -3,7 +3,9 @@
 $primary-color: #575756;
 $secondary-color: #DADADA;
 $tertiary-color: #61A8DD;
-
+.login {
+  display: flex;  
+}
 .connexion_title {
     display: flex;
     align-items: center;
@@ -11,15 +13,17 @@ $tertiary-color: #61A8DD;
     flex-direction: row;
     & h1 {
         margin-right: 1rem;
-        color: $primary-color;
+        color: $primary-color!important;
+        font-size: 2em;
+        padding-bottom: 1em;
     }
 }
 
 .section_form {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
-    margin: 10px 0 0 0;
+    margin: 10px 14em 0 16em;
     & form {
         display: flex;
         flex-direction: column;
@@ -34,6 +38,11 @@ $tertiary-color: #61A8DD;
     margin: 5px 0;
     & img, label, input {
         margin-right: 10px;
+    }
+    input {
+        border-radius: 25px;
+        padding: 0.8em;
+        border: 1px solid $primary-color;
     }
     & img {
         width: 30px;
@@ -75,5 +84,25 @@ label {
     }
     .section_form_img {
         display: none;
+    }
+    .section_form {
+        margin: auto;  
+    }
+    .form_group input {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid $primary-color ;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    .form_group label {
+        display: none;
+    }
+    .connexion_form_btn {
+        margin-right: 2em;
+
+    }
+    .login {
+        margin-bottom: 4em;
     }
 }
