@@ -6,33 +6,36 @@
     {% if error %}
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-    <div class="connexion_title">
-        <h1>Connexion</h1>
-        <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
+    <div class="login">   
+        <section class="section_form">
+        <div class="connexion_title">
+            <h1>Connexion</h1>
+            <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
+        </div>
+            <form action="{{ path('login') }}" method="POST">
+                <div class="form_group">
+                    <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}"placeholder="Email"/>
+                </div>
+                <div class="form_group">
+                    <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="_password" placeholder="Mot de passe"/>
+                </div>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                <div class="connexion_div_btn">
+                    <button class="connexion_form_btn" type="submit">Se connecter</button>
+                    <button class="connexion_form_btn" type="reset">Annuler</button>
+                </div>
+            </form>
+             <div class="switch_form">
+            <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
+        </div>
+        </section>
+       
+        <section class="section_form_img">
+            <img src="{{ asset('pictures/connexion.svg') }}" alt="image d'une personne devant un portable avec un formulaire de connexion.">
+        </section>
     </div>
-    <section class="section_form">
-         <form action="{{ path('login') }}" method="POST">
-            <div class="form_group">
-                <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
-                <label for="username">Email :</label>
-                <input type="text" id="username" name="_username" value="{{ last_username }}"/>
-            </div>
-            <div class="form_group">
-                <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
-                <label for="password">Mot de passe :</label>
-                <input type="password" id="password" name="_password"/>
-            </div>
-             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <div class="connexion_div_btn">
-                <button class="connexion_form_btn" type="submit">Se connecter</button>
-                <button class="connexion_form_btn" type="reset">Annuler</button>
-            </div>
-        </form>
-    </section>
-    <div class="switch_form">
-        <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
-    </div>
-    <section class="section_form_img">
-        <img src="{{ asset('pictures/connexion.svg') }}" alt="image d'une personne devant un portable avec un formulaire de connexion.">
-    </section>
 {% endblock %}
