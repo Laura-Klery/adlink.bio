@@ -21,6 +21,7 @@
 					<th colspan="1">Prénom</th>
 					<th colspan="1">Email</th>
 					<th colspan="1">Pseudo</th>
+					<th colspan="1">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,12 +43,13 @@
 							<td class="dashboard_user_line">
 								{{ user.pseudo }}
 							</td>
+							<td class="dashboard_user_line">
+								{{ user.pseudo }}
+							</td>
 						</tr>
 					{% endfor %}
 				{% endif %}
 			</tbody>
 		</table>
-
-
 	</div>
 {% endblock %}

@@ -8,15 +8,15 @@
     {% endif %}
     <div class="login">   
         <section class="section_form">
-        <div class="connexion_title">
-            <h1>Connexion</h1>
-            <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
-        </div>
+            <div class="connexion_title">
+                <h1>Connexion</h1>
+                <img src="{{ asset('pictures/icon-connexion.svg') }}" alt="Icône de connexion, purement décoratif">
+            </div>
             <form action="{{ path('login') }}" method="POST">
                 <div class="form_group">
                     <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
                     <label for="username">Email</label>
-                    <input type="text" id="username" name="_username" value="{{ last_username }}"placeholder="Email"/>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email"/>
                 </div>
                 <div class="form_group">
                     <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
@@ -29,11 +29,10 @@
                     <button class="connexion_form_btn" type="reset">Annuler</button>
                 </div>
             </form>
-             <div class="switch_form">
-            <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
-        </div>
+            <div class="switch_form">
+                <p>Pas encore membre ? <a href="{{ path('register') }}">S'inscrire</a></p>
+            </div>
         </section>
-       
         <section class="section_form_img">
             <img src="{{ asset('pictures/connexion.svg') }}" alt="image d'une personne devant un portable avec un formulaire de connexion.">
         </section>
