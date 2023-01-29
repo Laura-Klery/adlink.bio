@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
 
-body {
-       background-color: rgba(113, 111, 114, 0.783);
-    }
     form{
         display: table-cell;
         text-align: center;
@@ -17,9 +14,8 @@ body {
 h3{ display:flex;padding:9px 8px;
 
 }
-     button {
+     .button_contact {
         display: inline-block;
-        background-color: #756887;
         border-radius: 10px;
         border: 4px double #cccccc;
         color: #eeeeee;

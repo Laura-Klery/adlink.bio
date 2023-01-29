@@ -1,24 +1,19 @@
 
--body{
+body{
     font: 1em sans-serif; 
-
  }
- example-wrapper{ 
+ 
+ .example-wrapper{ 
     margin :1em auto; 
     max-width: 800px; 
-    width: 95%; font:
-     18px/1.5 sans-serif;
+    width: 95%; 
+    font: 18px/1.5 sans-serif;
  }
- @media screen and(max-widht:800px) {
+ @media screen and (max-width:800px) {
     .example-wrapper{
         display: none;
-
       }
-      .p{
-        display: none;
-        
-      }
-
-
-    
+      p{
+        display: none; 
+      }   
  }
