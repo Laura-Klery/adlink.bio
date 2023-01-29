@@ -15,7 +15,6 @@ h2 {
 }
 
 h1 {
-    color: white!important;
     padding-top: 1em;
 }
 
@@ -34,6 +33,9 @@ hr {
     padding: 1em 2em;
     color: white;
     border: 1px solid $tertiary-color;
+    a {
+        color: white;
+    }
 
 }
 
@@ -56,7 +58,9 @@ hr {
     z-index: 1;
     display: grid;
     justify-items: center;
-
+    h1 {
+        color: white!important;
+    }
     h2 {
         color: white;
     }
