@@ -8,6 +8,9 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './scss/app.scss';
 import './scss/home.scss';
+import'./scss/contact.scss';
+import'./scss/juridiques.scss';
+
 
 import script from './script/menu.js';
 
