@@ -1,58 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
-
-    form{
-        display: table-cell;
+$primary-color: #575756;
+$secondary-color: #DADADA;
+$tertiary-color: #61A8DD;
+.contact{
+  background-color: #f1f1f1;
+  margin: 2em auto;
+  width: 60%;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 3px 3px 4px #666666;
+  padding: 3em 8em 4em;
+}
+input{
+  border: 1px solid $primary-color;
+  width: 100%;
+  padding: 0.5em;
+}
+.form-select {
+  width: 100%;
+  padding: 0.5em;
+  background-color: $tertiary-color;
+  color: white;
+}
+.banner_contact {
+    /* background-image: url("http://127.0.0.1:8000/pictures/home_banner.jpg"); */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)), url("http://127.0.0.1:8000/pictures/home_banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 40em;
+    text-align: center;
+    padding: 5em;
+}
+form {
+  display: table-cell;
         text-align: center;
         vertical-align: middle;
-     }
-     h1 {
-      text-align: center;
-  }
-  h2 {
-    text-align: center;
-}
-h3{ display:flex;padding:9px 8px;
+  background-color: #DADADA;
+  padding: 50px;
+  border-radius: 10px;
+  font-size: 20px;
 
 }
-     .button_contact {
-        display: inline-block;
-        border-radius: 10px;
-        border: 4px double #cccccc;
-        color: #eeeeee;
-        text-align: center;
-        font-size: 28px;
-        padding: 20px;
-        width: 200px;
-        -webkit-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        cursor: pointer;
-        margin: 5px;
-      }
-      textarea{
+h3 { text-align: center;
+  padding: 1em;
+  font-size: 2em;
+  font-family: 'Bitter', serif;
+  color: $primary-color;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+h2 {
+  left: 0;
+  padding: 9px 8px;
+  color: white;
+}
+
+.btn_contact {
+  background-color: $primary-color;
+  border-radius: 5px;
+  padding: 1em 2em;
+  color: white;
+  width: 100%;
+  border: 1px solid $tertiary-color;
+  margin: 0.5em 0;
+}
+textarea{
         font-size: 20px;
-        
         font-weight: 700;
         color: #FFFFFF;
-         width: 20%;
+        width: 100%;
         height: 180px;
         padding: 4px 10px;
-        border: 10px;
+        margin: 0.5em 0;
         
-        
+Select {
+          display: inline-block;
 
+          background-color: #0000FF;
+          border-radius: 20px;
+          font-size: 13px;
+          border: 4px double #cccccc;
+          color: #eeeeee;
+          text-align: center;
+          margin-top: 3px;
+          padding: 3px
+}       
 }
-      label {
-        font-size: 20px;
+label {
+        font-size: 30px;
+
         font-weight: 700;
         color: #FFFFFF;
-      }
-      @media all and (max-widht:800px){
-            .image{
-              display: none;
-            }
-            .form{
-              display: none;
-            }
-      }
+        margin-top: 3px;
+}
+
+@media screen and (max-width: 768px) {
+.contact {
+  width: 80%;
+  padding: 3em;
+}  
+}
