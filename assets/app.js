@@ -15,6 +15,9 @@ import './scss/login.scss';
 import './scss/register.scss';
 import './scss/dashboard_user.scss';
 import './scss/landing_page.scss';
+import'./scss/contact.scss';
+import'./scss/juridiques.scss';
+
 
 
 

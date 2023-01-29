@@ -1,8 +1,235 @@
+ 
 {% extends 'base.html.twig' %}
 
-{% block title %}Contact{% endblock %}
+
+{% block title %}Contact- {{ parent() }}{% endblock %}
 
 {% block body %}
-Contactez-nous!
-{{ form(form) }}
+
+
+<section>
+
+    <link rel="stylsheet" href="assets/scss/contact.scss">
+    <div class="titre">
+    <style>
+    .titre { margin: 1em auto;  }
+    .titre code { background: #61A8DD;color: #eeeeee; padding: 2px 6px; }
+</style>
+
+        <h1> Contact </h1>
+        <h2> Agence de developpement web </h2>
+        <style>
+      h1 {
+      text-align: center;
+      display:flex;
+      position:absolute;
+  }
+   h2{
+      text-align: justify;
+      display:inline-block;
+      position:absolute;
+      top:195px;
+      left:0;
+      padding:9px 8px;
+  }
+      </style>
+        
+            <div class="image">
+            <div style="text-align: center" >
+            
+ 
+            <a href="{{ path('home') }}" class=""><img style="width:100%;height:'100%;display:contents;border-radius: 150px;
+}" src="{{ asset('/pictures/AllDevLong2.svg') }}" alt="logo all dev long"><img style="icon" href="{{ asset('pictures/AllDevLong.ico') }}"><title>All Dev Long
+
+ </title>
+ </a>
+
+
+ 
+                
+            </div>       
+    </div>
+ 
+</section>
+<main>
+ 
+
+ <form>
+ <form class="row row-cols-lg-auto g-3 align-items-center">
+ <style>
+ form{
+        
+        background-color: #DADADA;
+        
+        padding:50px;
+        border-radius:10px;
+        top:50%;
+        left:50%;
+        font-size:20px;
+        flex-direction:column;
+        
+        
+
+         }
+ </style>
+
+<h3>Nous Contacter<style> h3{ display:flex;padding:9px 8px;
+
+ }</style></h3>
+
+
+<div class="col-md-5">
+
+<div class="p-4 mb-3 bg-white">
+<p class="mb-4 font-weight-bold"><a href="#"> <i class="fa-solid fa-location-dot"></i></a>123 Mockup St,New York</p><br>
+
+<p class="mb-0 font-weight-bold"></p>
+<p class="mb-4 font-weight-bold"><a href="#"><i class="fa-solid fa-mobile-screen"></i>(+1)123 456 78 90</a></p><br>
+
+<p class="mb-0 font-weight-bold"></p>
+<p class="mb-4 font-weight-bold"><a href="#"><i class="fa-solid fa-phone"></i></a>(+1)123 456 78 91</a></p><br>
+</div>
+
+
+
+<div class="form">
+<div style="text-align: center" >
+  <style>
+    label{
+        font-size: 30px;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+        margin-top:3px;
+        
+        
+        
+
+}
+</style>
+
+
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Nom" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+  
+</div>
+<div class="form">
+<div style="text-align: center" >
+<style>
+label{
+        font-size: 30px;
+        
+        font-weight: bold;
+        color: #FFFFFF;
+        width:50%
+        width:200px;
+				height:50px;
+				border:1px solid #0
+        
+
+}
+</style>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Prenom" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
+</div>
+<div class="form">
+<div style="text-align: center" >
+<style>
+label{
+        font-size: 30px;
+        
+        font-weight: 700;
+        color: #FFFFFF;
+        width:200px;
+				height:50px;
+				border:1px solid #0
+        
+        
+
+}
+</style>
+  <label for="exampleFormControlInput1" class="form-label"></label>
+  <input type="Email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+</div>
+<div class="select">
+<style>
+Select{
+  display: inline-block;
+  
+  background-color:  #0000FF;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 4px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  margin-top:3px;
+  padding:3px
+
+}
+</style>
+
+    <label class="visually-hidden" for="autoSizingSelect"></label>
+    <div style="text-align: center" >
+    <select class="form-select" id="autoSizingSelect">
+      <option selected>Object...</option>
+      <option value="1">Question</option>
+      <option value="2">Inquiétude</option>
+      <option value="3">Supplément Informations </option>
+    </select>
+  </div>
+
+<div class="text-area">
+<div style="text-align: center" >
+<style>
+textarea{
+        font-size: 20px;
+         
+        font-weight: 700;
+        color: #FFFFFF;
+         width: 20%;
+        height: 180px;
+        padding: 4px 10px;
+        border: 10px;
+        
+        
+
+}
+</style>
+
+  <label for="exampleFormControlTextarea1" class="form-label"placeholder="Message"></label>
+   
+  <textarea class="form-control" id="exampleFormControlTextarea1"placeholder="Message" rows="3" minlength="10" maxlength="30"></textarea>
+</div>
+ <div class="button">
+ <div style="text-align: center" >
+ <style>
+button {
+  display: inline-block;
+  background-color: #808080;
+  border-radius: 10px;
+  border: 1px double #cccccc;
+  color: #eeeeee;
+  text-align: center;
+  font-size: 15px;
+  padding: 1px;
+  width: 93px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 1px;
+}
+ </style>
+ 
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+  </body>
+</form>
+</body>
+</main>
+
+
+
 {% endblock %}
+
