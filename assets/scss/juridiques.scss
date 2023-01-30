@@ -1,11 +1,29 @@
 
 body{
     font: 1em sans-serif; 
+    color: #61A8DD;
  }
- 
- .example-wrapper{ 
+ paragraphe{ 
     margin :1em auto; 
     max-width: 800px; 
-    width: 95%; 
-    font: 18px/1.5 sans-serif;
+    width: 95%; font:
+     18px/1.5 sans-serif;
+ }
+ h1 {
+    text-align: center;
+    color: #61A8DD;
+}
+
+ @media screen and(max-widht:800px) {
+    .text{
+        display: none;
+
+      }
+      .p{
+        display: none;
+        
+      }
+
+
+    
  }
