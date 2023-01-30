@@ -1,29 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Données personnelles{% endblock %}
+{% block title %}Données personnelles - {{ parent() }}{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Données personnelles</h1>
-    <h2>All Dev Long</h2>
-    <style>
-      h1 {
-      text-align: center;
-      color: #61A8DD;
-  }
-   h2 {
-      text-align: center;
-      color: #61A8DD;
-  }
-      </style>
-
-
- <p>Lorem ipsum dolor sit amet. Est provident voluptate non rerum voluptatibus et voluptatem placeat et
-dicta veritatis qui amet omnis ex dolores distinctio. Ut molestias perspiciatis id asperiores suscipit qui nihil libero eos molestias veniam ea pariatur architecto. Aut nulla voluptas id deleniti reprehenderit et unde sequi eos omnis error. Eum asperiores tempora sit veritatis inventore ad corrupti deleniti cum quia nulla est ipsa deserunt At itaque architecto ea alias aspernatur.
-Est reiciendis aspernatur et doloremque rerum qui labore consectetur. Vel illo nobis et illo provident</p>
+    <section class="legal_banner">
+        <h1>Données Personnelles</h1>
+    </section>
+    <section class="legal_section">
+        <article>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vel feugiat sapien, et mattis nisi. Donec finibus pharetra lorem. Nulla facilisi. Morbi non placerat leo. Pellentesque eget justo rutrum, commodo ex volutpat, viverra leo. Nam a accumsan enim. Mauris id nibh sagittis, vestibulum odio nec, fermentum enim. Suspendisse volutpat ullamcorper pretium. Pellentesque nunc sapien, luctus at hendrerit ut, consequat quis ex. Integer cursus sed leo lacinia cursus. Vivamus sodales ante lorem, sed pharetra tellus tristique quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent in ipsum dictum, mollis felis non, ultrices ipsum. Mauris iaculis vel lacus ut cursus. Nulla elit nunc, consectetur quis elementum at, vulputate eget mi. In sed bibendum tellus.</p>
+        </article>
+        <article>
+            <p>Maecenas vitae fermentum sem. Sed ut viverra est. Etiam posuere turpis enim, faucibus elementum urna fermentum eu. Integer iaculis eleifend cursus. Etiam orci felis, eleifend id nisl non, pellentesque porta est. Proin et ipsum neque. Duis sit amet facilisis lacus. Mauris ex velit, interdum a hendrerit at, porta ac enim. Nullam in vehicula metus. Fusce semper iaculis imperdiet. Fusce sollicitudin diam in ligula finibus porttitor.</p>
+        </article>
+        <article>
+            <p>Morbi et venenatis tortor. Nullam ultricies orci vel purus volutpat lacinia. In interdum auctor felis, ut suscipit libero malesuada eget. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus placerat augue ac ex fermentum accumsan. Donec tincidunt est eget leo eleifend facilisis. Aliquam placerat pulvinar ante, sed accumsan nisi finibus ac. Curabitur malesuada ante et ex mollis, a aliquam sem ultrices.</p>
+        </article>
+        <article>
+            <p>Vestibulum at libero eu nulla consectetur pellentesque at at nibh. Donec pharetra, enim vel lacinia aliquam, sapien felis scelerisque nibh, et ullamcorper eros quam eu odio. Morbi iaculis risus eget velit mattis finibus quis ut elit. Proin metus sapien, scelerisque gravida lorem eget, ornare cursus massa. Cras ultricies semper metus, egestas vestibulum felis semper et. Etiam arcu nunc, mollis eget mi a, eleifend placerat dui. Morbi dictum neque eu est mattis, eu pulvinar turpis vestibulum. Nullam consequat tellus neque, quis lacinia nibh luctus sit amet. Ut id nisi bibendum, ullamcorper nunc ac, pulvinar diam. Morbi commodo tempor risus sed mattis. Etiam sit amet mattis metus. Suspendisse quis erat ut sapien ullamcorper pharetra. Mauris ut diam sit amet sapien consectetur tempor. Aenean laoreet tortor ut eleifend efficitur. In quis tempor ante. Sed iaculis laoreet quam, ac pulvinar tortor malesuada at.</p>
+        </article>
+        <article>
+            <p>Donec ut ex ac mi faucibus lacinia. Pellentesque pulvinar elit ac nisi tristique pharetra. Phasellus accumsan dui risus, vel placerat nibh cursus non. In sollicitudin purus id justo suscipit feugiat. Nullam aliquam risus vitae rhoncus tempor. Curabitur dignissim dapibus tellus eget aliquet. Praesent et enim accumsan, consequat mauris sit amet, semper nibh. Maecenas at vestibulum lectus. Donec imperdiet, tellus sed elementum dapibus, ligula enim bibendum lacus, ut egestas eros nunc vel est. Donec sollicitudin condimentum risus. Nulla id nibh interdum, vulputate erat sed, tempus ex. Phasellus sit amet justo nec lectus accumsan vehicula id non leo. Duis non imperdiet arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus quam lacus, vulputate vitae gravida et, sodales vel sem. Proin semper, augue sed interdum ultricies, libero ipsum viverra diam, ac sagittis nulla odio ultrices metus.</p>
+        </article>
+    </section>
 {% endblock %}
