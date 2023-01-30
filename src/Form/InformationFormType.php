@@ -55,7 +55,7 @@ class InformationFormType extends AbstractType
                     'required' => false,
                     'placeholder' => false,
                 ])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
+            ->add('save', SubmitType::class, ['label' => 'Enregistrer'])
         ;
     }
 
