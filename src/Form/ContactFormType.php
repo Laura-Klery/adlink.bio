@@ -13,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class ContactType extends AbstractType
+class ContactFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -24,12 +24,12 @@ class ContactType extends AbstractType
             ])
             
             ->add('Prenom',TextType::class,[
-                'label'=>'Prenom'
+                'label'=>'Prénom'
             ])
             ->add('email',EmailType::class,[
                 'label'=>'Email'
             ])
-            ->add('Objet', ChoiceType::class ,[
+            ->add('Sujet', ChoiceType::class ,[
                 'choices' => [
                     'Question' => 1,
                     'Inquiétude' => 2,
@@ -37,7 +37,7 @@ class ContactType extends AbstractType
                 ],
 
             ])
-            ->add('message', TextareaType::class)
+            ->add('message', TextareaType::class, ['placeholder' => 'Message'])
             
             ->add('envoyer',SubmitType::class,[
                 'attr'  =>[
