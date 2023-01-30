@@ -13,14 +13,14 @@ $tertiary-color: #61a8dd;
   padding: 3em 8em 4em;
 }
 
-input {
+.contact input {
   border: 1px solid $primary-color;
   width: 100%;
   padding: 0.5em;
   font-family: Alegreya Sans, sans-serif;
 }
 
-.form-select {
+.contact .form-select {
   width: 100%;
   padding: 0.5em;
   background-color: $tertiary-color;
@@ -40,7 +40,7 @@ input {
   padding: 5em;
 }
 
-form {
+.contact form {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
@@ -84,7 +84,7 @@ h1 {
   transition: 0.5s;
 }
 
-textarea {
+.contact textarea {
   font-size: 1em;
   color: $primary-color;
   width: 100%;
@@ -107,7 +107,7 @@ textarea {
   }
 }
 
-label {
+.contact label {
   font-size: 30px;
 
   font-weight: 700;
