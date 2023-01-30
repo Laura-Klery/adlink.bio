@@ -17,6 +17,11 @@ h2 {
 h1 {
     padding-top: 1em;
 }
+h3 {
+    font-family: Bitter, serif;
+    color: $primary-color;
+    padding: 0.5em;
+}
 
 hr {
     background-color: #61A8DD;
@@ -33,6 +38,7 @@ hr {
     padding: 1em 2em;
     color: white;
     border: 1px solid $tertiary-color;
+    height: fit-content;
     a {
         color: white;
     }
