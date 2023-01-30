@@ -11,32 +11,32 @@
         <div class="signin_form">
             {{ form_start(registrationForm, {'method': 'POST'}) }}
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
+                <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
                 {{ form_label(registrationForm.firstName, 'Prénom') }}
                 {{ form_widget(registrationForm.firstName, {'attr': {'placeholder': 'Votre Prénom'}}) }}
             </div>
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
+                <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
                 {{ form_label(registrationForm.lastName, 'Nom') }}
                 {{ form_widget(registrationForm.lastName, {'attr': {'placeholder': 'Votre nom'}}) }}
             </div>
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
+                <img src="{{ asset('pictures/icon-avatar.svg') }}" alt="icône avatar, purement décoratif">
                 {{ form_label(registrationForm.pseudo, 'Pseudo') }}
                 {{ form_widget(registrationForm.pseudo, {'attr': {'placeholder': 'votre pseudo'}}) }}
             </div>
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-email.svg') }}" alt="icône d'un cadenas, purement décoratif">
+                <img src="{{ asset('pictures/icon-email.svg') }}" alt="icône d'un cadenas, purement décoratif">
                 {{ form_label(registrationForm.email, 'Adresse mail') }}
                 {{ form_widget(registrationForm.email, {'attr': {'placeholder': 'contact@contact.fr'}}) }}
             </div>
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
+                <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
                 {{ form_label(registrationForm.password.first, 'Mot de passe') }}
                 {{ form_widget(registrationForm.password.first, {'attr': {'placeholder': '********'}}) }}
             </div>
             <div class="form_group2">
-            <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
+                <img src="{{ asset('pictures/icon-password.svg') }}" alt="icône d'un cadenas, purement décoratif">
                 {{ form_label(registrationForm.password.second, 'Confirmer') }}
                 {{ form_widget(registrationForm.password.second, {'attr': {'placeholder': '********'}}) }}
             </div>
