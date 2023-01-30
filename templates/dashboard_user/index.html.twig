@@ -4,26 +4,91 @@
 
 {% block body %}
     <section class="dashboard_user_container">
-        <div>
+        <div class="dashboard_user_title">
+            <img src="{{ asset('pictures/dashboard_user_icon.svg') }}" alt="Icône de connexion, purement décoratif">
             <h1>Bonjour, {{ user.pseudo }}</h1>
-            <a href="{{ path('landing_page', {pseudo: user.pseudo}) }}">Voir mon site</a>
         </div>
-        <section class="section_information" id="information_account">
-            <h2>Vos informations personnelles</h2>
-            {{ form(sectionAccountForm) }}
+        <section class="section_information dashboard_user_form" id="information_account">
+            <h2>Vos informations</h2>
+            {{ form_start(sectionAccountForm) }}
+            <div class="section_information_form">
+                {{ form_row(sectionAccountForm.firstName) }}
+                {{ form_row(sectionAccountForm.lastName) }}
+                {{ form_row(sectionAccountForm.email) }}
+            </div>
+            <div class="section_information_form">
+                {{ form_row(sectionAccountForm.pseudo) }}
+                {{ form_row(sectionAccountForm.password) }}
+                {{ form_row(sectionAccountForm.globalFontName) }}
+            </div>
+            <div class="section_information_form">
+                {{ form_row(sectionAccountForm.save) }}
+            </div>
+            {{ form_end(sectionAccountForm) }}
         </section>
-        <section class="section_brand" id="section_brand">
-            <h2>La Marque</h2>
-            {{ form(sectionBrandForm) }}
+        <section class="section_brand dashboard_user_form" id="section_brand">
+            <h2>Partie 1 : Marque</h2>
+            {{ form_start(sectionBrandForm) }}
+            <div class="section_brand_form">
+                {{ form_row(sectionBrandForm.logoFile) }}
             <!-- Mettre l'image en petite après l'import -->
+                {{ form_row(sectionBrandForm.brandName) }}
+                {{ form_row(sectionBrandForm.baseline) }}
+            </div>
+            <div class="section_brand_form">
+                {{ form_row(sectionBrandForm.brandBackground) }}
+                {{ form_row(sectionBrandForm.brandNameColor) }}
+                {{ form_row(sectionBrandForm.brandBaselineColor) }}
+            </div>
+            <div class="section_brand_form">
+                {{ form_row(sectionBrandForm.enabled) }}
+                {{ form_row(sectionBrandForm.save) }}
+            </div>
+            {{ form_end(sectionBrandForm) }}
         </section>
-        <section class="section_video" id="section_video">
-            <h2>La Vidéo</h2>
-            {{ form(sectionVideoForm) }}
+        <section class="section_video dashboard_user_form" id="section_video">
+            <h2>Partie 2 : Vidéo</h2>
+            {{ form_start(sectionVideoForm) }}
+            <div class="section_video_form">
+                {{ form_row(sectionVideoForm.link) }}
+            </div>
+            <div class="section_video_form">
+                {{ form_row(sectionVideoForm.sectionVideoBackground) }}
+            </div>
+            <div class="section_video_form">
+                {{ form_row(sectionVideoForm.enabled) }}
+                {{ form_row(sectionVideoForm.save) }}
+            </div>
+            {{ form_end(sectionVideoForm) }}
         </section>
-        <section class="section_promotion" id="section_promotion">
-            <h2>Les Promotion</h2>
-            {{ form(sectionPromotionForm) }}
+        <section class="section_promotion dashboard_user_form" id="section_promotion">
+            <h2>Partie 3 : Codes Promotions</h2>
+            {{ form_start(sectionPromotionForm) }}
+            <div class="section_promotion_form">
+                {{ form_row(sectionPromotionForm.sectionPromotionBackground) }}
+                {{ form_row(sectionPromotionForm.sectionPromotionCardBackground) }}
+                {{ form_row(sectionPromotionForm.sectionPromotionButtonBackground) }}
+            </div>
+            <div class="section_promotion_form">
+                {{ form_row(sectionPromotionForm.sectionPromotionCodeColor) }}
+                {{ form_row(sectionPromotionForm.sectionPromotionDescriptionColor) }}
+            </div>
+            <div class="section_promotion_form">
+                {{ form_row(sectionPromotionForm.enabled) }}
+                {{ form_row(sectionPromotionForm.save) }}
+            </div>
+            {{ form_end(sectionPromotionForm) }}
+            {{ form_start(promotionForm) }}
+            <div class="section_promotion_form">
+                {{ form_row(promotionForm.code) }}
+            </div>
+            <div class="section_promotion_form">
+                {{ form_row(promotionForm.description) }}
+            </div>
+            <div class="section_promotion_form">
+                {{ form_row(promotionForm.submit) }}
+            </div>
+            {{ form_end(promotionForm) }}
             <table>
                 <thead>
                     <tr>
@@ -44,11 +109,29 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {{ form(promotionForm) }}
         </section>
-        <section class="section_external_site" id="section_external_site">
-            <h2>Les Liens Externes</h2>
-            {{ form(sectionExternalSiteForm) }}
+        <section class="section_external_site dashboard_user_form" id="section_external_site">
+            <h2>Partie 4 : Liens Externes</h2>
+            {{ form_start(sectionExternalSiteForm) }}
+            <div class="section_external_site_form">
+                {{ form_row(sectionExternalSiteForm.externalSiteBackground) }}
+                {{ form_row(sectionExternalSiteForm.buttonBackground) }}
+                {{ form_row(sectionExternalSiteForm.externalSiteLinkColor) }}
+            </div>
+            <div class="section_external_site_form">
+                {{ form_row(sectionExternalSiteForm.enabled) }}
+                {{ form_row(sectionExternalSiteForm.save) }}
+            </div>
+            {{ form_end(sectionExternalSiteForm) }}
+            {{ form_start(externalSiteForm) }}
+            <div class="section_external_site_form">
+                {{ form_row(externalSiteForm.name) }}
+                {{ form_row(externalSiteForm.link) }}
+            </div>
+            <div class="section_external_site_form">
+                {{ form_row(externalSiteForm.submit) }}
+            </div>
+            {{ form_end(externalSiteForm) }}
             <table>
                 <thead>
                     <tr>
@@ -69,12 +152,35 @@
                     {% endfor %}
                 </tbody>
             </table>
-            {{ form(externalSiteForm) }}
         </section>
-        <section class="section_social_network" id="section_social_network">
-            <h2>Les Réseaux Sociaux</h2>
-            {{ form(sectionSocialNetworkForm) }}
-            {{ form(socialNetworkForm) }}
+        <section class="section_social_network dashboard_user_form" id="section_social_network">
+            <h2>Partie 5 : Réseaux Sociaux</h2>
+            {{ form_start(sectionSocialNetworkForm) }}
+            <div class="section_social_network_form">
+                {{ form_row(sectionSocialNetworkForm.sectionSocialNetworkBackground) }}
+                {{ form_row(sectionSocialNetworkForm.socialNetworkIconColor) }}
+            </div>
+            <div class="section_social_network_form">
+                {{ form_row(sectionSocialNetworkForm.enabled) }}
+                {{ form_row(sectionSocialNetworkForm.save) }}
+            </div>
+            {{ form_end(sectionSocialNetworkForm) }}
+            {{ form_start(socialNetworkForm) }}
+            <div class="section_social_network_form">
+                {{ form_row(socialNetworkForm.facebook) }}
+                {{ form_row(socialNetworkForm.instagram) }}
+                {{ form_row(socialNetworkForm.twitter) }}
+            </div>
+            <div class="section_social_network_form">
+                {{ form_row(socialNetworkForm.linkedin) }}
+                {{ form_row(socialNetworkForm.tiktok) }}
+                {{ form_row(socialNetworkForm.youtube) }}
+            </div>
+            <div class="section_social_network_form">
+                {{ form_row(socialNetworkForm.save) }}
+            </div>
+            {{ form_end(socialNetworkForm) }}
         </section>
+        <a href="{{ path('landing_page', {pseudo: user.pseudo}) }}">Voir mon site</a>
     </section>
 {% endblock %}
