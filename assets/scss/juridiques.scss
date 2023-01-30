@@ -10,4 +10,24 @@
   z-index: 1;
   display: grid;
   justify-items: center;
+  h1 {
+    padding-top: 0;
+  }
+}
+
+
+.legal_section {
+
+padding: 5em;
+
+p{
+  padding: 1em;
+  text-align: justify!important;
+}
+}
+
+@media screen and (max-width: 768px) {
+  .legal_section {
+    padding: 1em;
+  }
 }
