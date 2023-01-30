@@ -37,7 +37,7 @@ class ContactFormType extends AbstractType
                 ],
 
             ])
-            ->add('message', TextareaType::class, ['placeholder' => 'Message'])
+            ->add('message', TextareaType::class, [])
             
             ->add('envoyer',SubmitType::class,[
                 'attr'  =>[
