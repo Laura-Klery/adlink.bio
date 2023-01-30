@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;500;800&family=Bitter:wght@200;300;400;500;600;700&display=swap');
 
 body {
@@ -60,3 +61,17 @@ h3{ display:flex;padding:9px 8px;
               display: none;
             }
       }
+=======
+-body {
+        background-color: lightgray;
+    }
+    .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px; 
+        position: relative;
+        justify-content: space-between;
+        align-items: center;
+    }
+        
+>>>>>>> Stashed changes
