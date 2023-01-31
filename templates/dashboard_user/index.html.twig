@@ -8,7 +8,7 @@
             <img src="{{ asset('pictures/dashboard_user_icon.svg') }}" alt="Icône de connexion, purement décoratif">
             <h1>Bonjour, {{ user.pseudo }}</h1>
         </div>
-        <section class="section_information dashboard_user_form" id="information_account">
+        <section class="section_information_global_form dashboard_user_form" id="information_account">
             <h2>Vos informations</h2>
             {{ form_start(sectionAccountForm) }}
             <div class="section_information_form">
@@ -26,7 +26,7 @@
             </div>
             {{ form_end(sectionAccountForm) }}
         </section>
-        <section class="section_brand dashboard_user_form" id="section_brand">
+        <section class="section_brand_global_form dashboard_user_form" id="section_brand">
             <h2>Partie 1 : Marque</h2>
             {{ form_start(sectionBrandForm) }}
             <div class="section_brand_form">
@@ -46,7 +46,7 @@
             </div>
             {{ form_end(sectionBrandForm) }}
         </section>
-        <section class="section_video dashboard_user_form" id="section_video">
+        <section class="section_video_global_form dashboard_user_form" id="section_video">
             <h2>Partie 2 : Vidéo</h2>
             {{ form_start(sectionVideoForm) }}
             <div class="section_video_form">
@@ -61,7 +61,7 @@
             </div>
             {{ form_end(sectionVideoForm) }}
         </section>
-        <section class="section_promotion dashboard_user_form" id="section_promotion">
+        <section class="section_promotion_global_form dashboard_user_form" id="section_promotion">
             <h2>Partie 3 : Codes Promotions</h2>
             {{ form_start(sectionPromotionForm) }}
             <div class="section_promotion_form">
@@ -110,7 +110,7 @@
                 </tbody>
             </table>
         </section>
-        <section class="section_external_site dashboard_user_form" id="section_external_site">
+        <section class="section_external_site_global_form dashboard_user_form" id="section_external_site">
             <h2>Partie 4 : Liens Externes</h2>
             {{ form_start(sectionExternalSiteForm) }}
             <div class="section_external_site_form">
@@ -153,7 +153,7 @@
                 </tbody>
             </table>
         </section>
-        <section class="section_social_network dashboard_user_form" id="section_social_network">
+        <section class="section_social_network_global_form dashboard_user_form" id="section_social_network">
             <h2>Partie 5 : Réseaux Sociaux</h2>
             {{ form_start(sectionSocialNetworkForm) }}
             <div class="section_social_network_form">
