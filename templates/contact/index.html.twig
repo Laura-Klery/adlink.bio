@@ -4,71 +4,55 @@
 {% block title %}Contact - {{ parent() }}{% endblock %}
 
 {% block body %}
-
-<main>
-    </main>
-<body>    
 <section>
-		<div class="banner_contact">
-      <img class="logo_banner" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="All Dev Long About">
+    <div class="banner_contact">
+        <img class="logo_banner" src="{{ asset('/pictures/AllDevLong.svg') }}" alt="All Dev Long About">
         <h1>Contact</h1>
         <h2>Agence de developpement web</h2>
     </div>
 </section>
-
-		
 <section class="contact">
-				
-					<h3>Nous Contacter</h3>
-					<div class="col-md-5">
-
-							<p class="mb-4 font-weight-bold">
-									<i class="fa-solid fa-location-dot"></i></a> alldevlong.com</p><br>
-
-							<p class="mb-4 font-weight-bold">
-									<i class="fa-solid fa-mobile-screen"></i> 12 34 56 78 90</a></p><br>
-
-							<p class="mb-4 font-weight-bold">
-									<i class="fa-solid fa-phone"></i></a> contact@alldevlong.com</p></a></p><br>
-				</div>
-
-  <div class="form_contact">
-				<div class="form">
-						<label for="exampleFormControlInput1" class="form-label"></label>
-						<input type="Nom" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
-					</div>
-
-					<div class="form">						
-							<label for="exampleFormControlInput1" class="form-label"></label>
-							<input type="Prenom" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
-						</div>
-
-						<div class="form">							
-								<label for="exampleFormControlInput1" class="form-label"></label>
-								<input type="Email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
-							</div>
-              
-							<div class="select">
-								<label class="visually-hidden" for="autoSizingSelect"></label>
-									<select class="form-select" id="autoSizingSelect">
-										<option selected>Objet...</option>
-										<option value="1">Question</option>
-										<option value="2">Candidature</option>
-										<option value="3">Autre</option>
-									</select>
-								</div>
-
-								<div class="text-area">
-									<div style="text-align: center">
-										<label for="exampleFormControlTextarea1" class="form-label" placeholder="Message"></label>
-										<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" rows="3" minlength="10" maxlength="30"></textarea>
-									</div>
-									<div>
-										<div style="text-align: center">
-											<button class="btn_contact" type="submit" class="btn btn-primary">Envoyer</button>
-										</div>
-								</form>
-				  	</div>
+    <h3>Nous Contacter</h3>
+    <div class="col-md-5">
+        <p class="mb-4 font-weight-bold"><i class="fa-solid fa-location-dot"></i></a> alldevlong.com</p><br>
+        <p class="mb-4 font-weight-bold"><i class="fa-solid fa-mobile-screen"></i> 12 34 56 78 90</p><br>
+        <p class="mb-4 font-weight-bold"><i class="fa-solid fa-phone"></i></a> contact@alldevlong.com</p></a></p><br>
+    </div>
+    <div class="form_contact">
+        <form>
+            <div class="form">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="Nom" class="form-control" id="exampleFormControlInput1" placeholder="Nom">
+            </div>
+            <div class="form">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="Prenom" class="form-control" id="exampleFormControlInput1" placeholder="Prenom">
+            </div>
+            <div class="form">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="Email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
+            </div>
+            <div class="select">
+                <label class="visually-hidden" for="autoSizingSelect"></label>
+                <select class="form-select" id="autoSizingSelect">
+                    <option selected>Objet...</option>
+                    <option value="1">Question</option>
+                    <option value="2">Candidature</option>
+                    <option value="3">Autre</option>
+                </select>
+            </div>
+            <div class="text-area">
+                <div style="text-align: center">
+                    <label for="exampleFormControlTextarea1" class="form-label" placeholder="Message"></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" rows="3" minlength="10" maxlength="30"></textarea>
+                </div>
+                <div>
+                    <div style="text-align: center">
+                        <button class="btn_contact" type="submit" class="btn btn-primary">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </section>
-</body>
 {% endblock %}
