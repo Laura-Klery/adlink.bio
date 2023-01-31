@@ -11,12 +11,11 @@ use App\Repository\UserRepository;
 class DashboardAdminController extends AbstractController
 {
     /**
-     * @Route("/admin_dashboard", name="admin_dashboard")
+     * @Route("/dashboard_admin", name="dashboard_admin")
      */
     public function index(UserRepository $userRepository): Response
     {
-        $users = $userRepository -> findAll();
-        //var_dump($users); //LOG
+        $users = $userRepository->findAll();
         return $this->render('dashboard_admin/index.html.twig', [
             'users' => $users
         ]);

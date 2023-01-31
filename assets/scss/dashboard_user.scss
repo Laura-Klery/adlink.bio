@@ -10,6 +10,20 @@ $tertiary-color: #61A8DD;
     color: $primary-color;
     padding-top: .5rem;
   }
+  .button_landing_page {
+    padding: 0.5em 1em;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    background-color: $tertiary-color;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1em;
+    margin: 20px 0;
+    color: #000000;
+  }
+  .button_landing_page:hover {
+    background-color: rgba(97, 168, 221, 0.6);
+    transition: 0.5s;
+  }
 }
 
 .dashboard_user_title{
@@ -25,12 +39,51 @@ $tertiary-color: #61A8DD;
   box-shadow: 4px 4px #696969;
   text-align: center;
   padding: 1em 2em;
-  width: 50%;
   margin-top: 1rem;
   form {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  label {
+    margin-right: 5px;
   }
   input {
     border-radius: 5px;
+    padding: 0.5em;
+  }
+  input[type='color'] {
+    padding: 0;
+    width: 40px;
+  }
+  .vich-image, input[type='file'] {
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  }
+  button {
+    padding: 0.5em 1em;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    background-color: $tertiary-color;
+    width: 100%;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 1em;
+  }
+  button:hover {
+    background-color: rgba(97, 168, 221, 0.6);
+    transition: 0.5s;
+  }
+  select {
+    display: inline-block;
+    background-color: $tertiary-color;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    margin-top: 3px;
+    padding: 3px;
   }
 }
